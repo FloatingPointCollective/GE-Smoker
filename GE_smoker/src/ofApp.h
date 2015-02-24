@@ -20,12 +20,17 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-		ofTrueTypeFont		font;
+		ofTrueTypeFont fontGE170B, fontGE85B, fontGE54B;
 
     float sensorValue;
-    int readSensor;
+    int readSensor, w, h;
     string serialData;
     
     DataReader dataReader, dataReader2;
+    ofFbo screenFbo;
+    ofImage screenImage;
+    ofPixels * screenPixels;
+    bool isFullScreen;
+    
 };
 

@@ -40,6 +40,7 @@ int TimeBetweenReadings = 1000; // in ms
 byte sensordata [128];
 int device=0x50;
 byte floatbyte[5];
+bool flashLED = false;
 
 void setup()
  {
@@ -105,27 +106,21 @@ void printStartupData(){
 //*********************************************************************************
 void loop()
  {
-   
-   
     int Count[3]; //reading from 0 to 5 volt input
     int AltCount[3] ;//reading from -10 to +10V input
     float Voltage[3];
     float SensorReading[3];
     float Time;
-    digitalWrite(led, HIGH); //turn on LED
     
-    //print which # sensor reading this is
-   // Serial.print(ReadingNumber/1000.0*TimeBetweenReadings); 
+    if(flashLED)
+     digitalWrite(led, HIGH); //turn on LED
+    
 
-    Serial.print("s"); //tab character
-    
+    Serial.print("s"); //'s' denotes start    
     //**********************************************
-    //READ channels 1-2, and print the sensor values
+    //READ channels 1 & 2, and print the sensor values
     for (int Channel=1;Channel<=2;Channel++)
       {
-       
-      //  Serial.print("|"); //seperator character
-
         if (Name[Channel]=="Voltage +/- 10V")
           {
              AltCount[1] = analogRead(A1); //read both +/- 110 volt lines
@@ -144,13 +139,17 @@ void loop()
      //special calibration for thermistor temperture probe:
      if (SensorNumber[Channel]==10) SensorReading[Channel]=Thermistor(Count[Channel]);
      Serial.print(SensorReading[Channel], 1);
-     Serial.print("-");
+     //print separator character
+     if(Channel==1)
+       Serial.print("-");
     } // end of going through the channels
 
-  //Serial.println(""); 
+  //FLASH LED?
+  if(flashLED){
   delay(TimeBetweenReadings/2);// delay half of period
   digitalWrite(led, LOW);// LED on D13 flashes once per readng
   delay(TimeBetweenReadings/2);// delay the other half
+  }
   ReadingNumber++;
   
   Serial.flush();  

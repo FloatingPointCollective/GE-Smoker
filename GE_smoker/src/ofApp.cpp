@@ -7,11 +7,22 @@ void ofApp::setup(){
 	ofBackground(255);
 	ofSetLogLevel(OF_LOG_VERBOSE);
 	
-	font.loadFont("DIN.otf", 20);
+	//font.loadFont("DIN.otf", 20);
+    //load all fonts to be used
+    fontGE170B.loadFont("GEInsBol", 170);
+    fontGE85B.loadFont("GEInsBol", 85);
+    fontGE54B.loadFont("GEInsBol", 54);
     
     dataReader.setup("tty.usbserial-DA017U1V", 2);
     dataReader2.setup("tty.usbserial-DA017U1C", 1);
     
+    w = 1920;
+    h = 1080;
+    
+    screenFbo.allocate(w, h);
+    screenImage.allocate(w, h, OF_IMAGE_COLOR);
+    
+    isFullScreen = false;
 }
 
 //--------------------------------------------------------------
@@ -24,24 +35,40 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofBackground(0);
+    //draw everything to the screen FBO
+    ofBackground(255);
     
-    ofSetColor(255);
+    screenFbo.begin();
+    ofSetColor(0);
+    
 	string msg;
     msg +="OF App\n\n";
     msg +="Device 1:\n";
     msg += "RH: " + ofToString(dataReader.sensorValues[0]) + "\n";
     msg += "Temp: " + ofToString(dataReader.sensorValues[1]) + "\n\n";
-    
     msg +="Device 2:\n";
     msg += "Temp: " + ofToString(dataReader2.sensorValues[0]) + "\n";
     
-	font.drawString(msg, 50, 100);
+	fontGE85B.drawString(msg, 50, 100);
+    screenFbo.end();
+    //*********************************
+    
+    //update screen image from FBO
+    screenFbo.readToPixels(screenImage);
+    //scale the screen image based on the screen size
+    int newHeight = (ofGetWidth()*h)/w;
+    screenImage.resize(ofGetWidth(), newHeight);
+    screenImage.draw(0,0);
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed  (int key){ 
-   
+    switch(key){
+        case 'f':
+            isFullScreen = ! isFullScreen;
+            ofSetFullscreen(isFullScreen);
+            break;
+    }
 }
 
 //--------------------------------------------------------------
