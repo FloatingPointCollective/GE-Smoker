@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>9ABD3F92-21E8-47DB-A1A6-75791C128238</string>
+	<key>IDESourceControlProjectName</key>
+	<string>GE_smoker-screen3</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C0CD73B3805CEED0FD0116A896ED0A1DF5FBDED9</key>
+		<string>https://github.com/FloatingPointCollective/GE-Smoker.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>GE_smoker-screen3/GE_smoker-screen3.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C0CD73B3805CEED0FD0116A896ED0A1DF5FBDED9</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/FloatingPointCollective/GE-Smoker.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C0CD73B3805CEED0FD0116A896ED0A1DF5FBDED9</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C0CD73B3805CEED0FD0116A896ED0A1DF5FBDED9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>GE-Smoker</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -20,6 +20,13 @@ void SensorReading::setup(string label, string units, ofColor color, ofTrueTypeF
     _valueFont = valueFont;
     _unitFont = unitFont;
     _labelFont = labelFont;
+    
+    //define vars
+    labelHeight = 100;
+    padding = 30;
+    
+    //calculate total height
+    height = labelHeight + padding/2 + valueFont->getSize();
 }
 
 void SensorReading::update(string value){
@@ -30,8 +37,7 @@ void SensorReading::draw(int x, int y){
     //draw label
     ////box
     int labelWidth = 550;
-    int labelHeight = 100;
-    int padding = 30;
+
     ofSetColor(_color);
     ofRect(x, y-labelHeight, labelWidth, labelHeight);
     

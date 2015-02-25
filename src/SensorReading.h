@@ -22,5 +22,6 @@ class SensorReading{
     ofColor _color;
     string _label, _units, _value;
     ofTrueTypeFont * _valueFont, *_unitFont, *_labelFont;
+    int height, labelHeight, padding;
     
 };

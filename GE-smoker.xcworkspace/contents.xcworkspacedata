@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:GE_smoker.xcodeproj">
+      location = "group:GE_smoker-screen1/GE_smoker-screen1.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GE_smoker-screen2/GE_smoker-screen2.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GE_smoker-screen3/GE_smoker-screen3.xcodeproj">
    </FileRef>
 </Workspace>

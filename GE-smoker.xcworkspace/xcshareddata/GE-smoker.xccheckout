@@ -14,11 +14,11 @@
 		<string>https://github.com/FloatingPointCollective/GE-Smoker.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GE_smoker/GE-smoker.xcworkspace</string>
+	<string>GE-smoker.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>C0CD73B3805CEED0FD0116A896ED0A1DF5FBDED9</key>
-		<string>../..</string>
+		<string>..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/FloatingPointCollective/GE-Smoker.git</string>

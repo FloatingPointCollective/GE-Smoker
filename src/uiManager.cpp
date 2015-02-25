@@ -24,13 +24,16 @@ uiManager::uiManager(){
     
     //load all fonts to be used
     float fontScale = .75;
-    fontGE170B.loadFont("GEInsBol", 170*fontScale);
-    fontGE85B.loadFont("GEInsBol", 85*fontScale);
-    fontGE54B.loadFont("GEInsBol", 54*fontScale);
+    fontGE170B.loadFont("GEInsBol", 170*fontScale, true, true);
+    fontGE85B.loadFont("GEInsBol", 85*fontScale, true, true);
+    fontGE54B.loadFont("GEInsBol", 54*fontScale, true, true);
     
     //define colors
     red.setHex(0xd1202a);
     blue.setHex(0x0c6bbd);
+    green.setHex(0x35aa36);
+    orange.setHex(0xef7600);
+    purple.setHex(0x4853a0);
     
     isFullScreen = true;
 }
