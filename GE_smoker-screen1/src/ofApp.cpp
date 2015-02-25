@@ -9,7 +9,7 @@ void ofApp::setup(){
 	
 	//font.loadFont("DIN.otf", 20);
     //load all fonts to be used
-    float fontScale = .8;
+    float fontScale = .75;
     fontGE170B.loadFont("GEInsBol", 170*fontScale);
     fontGE85B.loadFont("GEInsBol", 85*fontScale);
     fontGE54B.loadFont("GEInsBol", 54*fontScale);
@@ -27,9 +27,11 @@ void ofApp::setup(){
     
     //define colors
     red.setHex(0xd1202a);
+    blue.setHex(0x0c6bbd);
     
     //create the widgets
     smokeVelocity.setup("SMOKE VELOCITY", "ft/min", red, &fontGE170B, &fontGE85B, &fontGE54B);
+    humidity.setup("RELATIVE HUMIDITY", "%", blue, &fontGE170B, &fontGE85B, &fontGE54B);
 }
 
 //--------------------------------------------------------------
@@ -60,6 +62,9 @@ void ofApp::draw(){
     
     smokeVelocity.update("69.9");
     smokeVelocity.draw(100, 640);
+    
+    humidity.update("69.9");
+    humidity.draw(100, 940);
     
     screenFbo.end();
     //*********************************

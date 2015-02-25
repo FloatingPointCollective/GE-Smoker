@@ -46,10 +46,11 @@ void SensorReading::draw(int x, int y){
     ofSetColor(0);
     ofRectangle valueBounds = _valueFont->getStringBoundingBox(_value, x, y);
     ofRectangle unitBounds = _unitFont->getStringBoundingBox(_units, 0, 0);
-    _unitFont->drawString(_units, x+labelWidth-unitBounds.width-padding, y-labelHeight-padding);
+    int baseLine = y-labelHeight-padding/2;
+    _unitFont->drawString(_units, x+labelWidth-unitBounds.width-padding, baseLine);
     
     //draw value
-    _valueFont->drawString(_value, x+labelWidth-unitBounds.width-valueBounds.width-padding-letterSpacing, y-labelHeight-padding);
+    _valueFont->drawString(_value, x+labelWidth-unitBounds.width-valueBounds.width-padding-letterSpacing, baseLine);
     
     
     
