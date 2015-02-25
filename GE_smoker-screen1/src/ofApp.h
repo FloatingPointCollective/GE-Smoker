@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "DataReader.h"
 #include "SensorReading.h"
+#include "uiManager.h"
 
 class ofApp : public ofBaseApp{
 	
@@ -21,20 +22,16 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
 		
-		ofTrueTypeFont fontGE170B, fontGE85B, fontGE54B;
 
     float sensorValue;
-    int readSensor, w, h;
+    int readSensor;
     string serialData;
     
     DataReader dataReader, dataReader2;
-    ofFbo screenFbo;
-    ofImage screenImage;
-    ofPixels * screenPixels;
-    bool isFullScreen;
     
     SensorReading smokeVelocity, humidity;
-    ofColor red, blue, green, orange, purple;
+    
+    uiManager ui;
     
 };
 

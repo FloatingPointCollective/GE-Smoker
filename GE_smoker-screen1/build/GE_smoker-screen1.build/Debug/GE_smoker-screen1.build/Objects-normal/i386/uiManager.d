@@ -1,6 +1,7 @@
 dependencies: \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/GE_smoker-screen1/src/ofApp.cpp \
-  src/ofApp.h ../../../libs/openFrameworks/ofMain.h \
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/uiManager.cpp \
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/uiManager.h \
+  ../../../libs/openFrameworks/ofMain.h \
   ../../../libs/openFrameworks/utils/ofConstants.h \
   ../../../libs/glew/include/GL/glew.h \
   ../../../libs/tess2/include/tesselator.h \
@@ -169,7 +170,4 @@ dependencies: \
   ../../../libs/openFrameworks/video/ofVideoPlayer.h \
   ../../../libs/openFrameworks/video/ofQTKitPlayer.h \
   ../../../libs/openFrameworks/3d/ofCamera.h \
-  ../../../libs/openFrameworks/3d/ofEasyCam.h \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/DataReader.h \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/SensorReading.h \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/uiManager.h
+  ../../../libs/openFrameworks/3d/ofEasyCam.h
