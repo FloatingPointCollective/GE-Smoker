@@ -1,6 +1,7 @@
 dependencies: \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/GE_smoker-screen1/src/ofApp.cpp \
-  src/ofApp.h ../../../libs/openFrameworks/ofMain.h \
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/Graph.cpp \
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/Graph.h \
+  ../../../libs/openFrameworks/ofMain.h \
   ../../../libs/openFrameworks/utils/ofConstants.h \
   ../../../libs/glew/include/GL/glew.h \
   ../../../libs/tess2/include/tesselator.h \
@@ -170,8 +171,6 @@ dependencies: \
   ../../../libs/openFrameworks/video/ofQTKitPlayer.h \
   ../../../libs/openFrameworks/3d/ofCamera.h \
   ../../../libs/openFrameworks/3d/ofEasyCam.h \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/DataReader.h \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/SensorReading.h \
   /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/addons/ofxFTGL/src/ofxFTGL.h \
   /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/addons/ofxFTGL/src/ofxFTGLFont.h \
   /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/GE_smoker-screen1/../../../addons/ofxFTGL/libs/FTGL/include/FTGL/ftgl.h \
@@ -210,6 +209,4 @@ dependencies: \
   ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLTextureFont.h \
   ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTLayout.h \
   ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTSimpleLayout.h \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/addons/ofxFTGL/src/ofxFTGLSimpleLayout.h \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/uiManager.h \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/Graph.h
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/addons/ofxFTGL/src/ofxFTGLSimpleLayout.h

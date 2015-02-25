@@ -7,7 +7,7 @@ void ofApp::setup(){
     dataReader2.setup("tty.usbserial-DA017U1C", 1);
     
     //create the widgets
-    meatTemp1.setup("MEAT TEMP 1", "¡f", ui.red, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
+    meatTemp1.setup("MEAT TEMP 1", ofHexToString("00B0")+"f", ui.red, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
     meatTemp2.setup("MEAT TEMP 2", "¡f", ui.orange, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
 
 }

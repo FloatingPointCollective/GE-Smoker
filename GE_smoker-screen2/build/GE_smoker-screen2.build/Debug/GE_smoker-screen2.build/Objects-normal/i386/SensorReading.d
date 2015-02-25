@@ -170,4 +170,43 @@ dependencies: \
   ../../../libs/openFrameworks/video/ofVideoPlayer.h \
   ../../../libs/openFrameworks/video/ofQTKitPlayer.h \
   ../../../libs/openFrameworks/3d/ofCamera.h \
-  ../../../libs/openFrameworks/3d/ofEasyCam.h
+  ../../../libs/openFrameworks/3d/ofEasyCam.h \
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/addons/ofxFTGL/src/ofxFTGL.h \
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/addons/ofxFTGL/src/ofxFTGLFont.h \
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/GE_smoker-screen2/../../../addons/ofxFTGL/libs/FTGL/include/FTGL/ftgl.h \
+  ../../../libs/freetype/include/ft2build.h \
+  ../../../libs/freetype/include/freetype2/freetype/config/ftheader.h \
+  ../../../libs/freetype/include/freetype2/freetype/freetype.h \
+  ../../../libs/freetype/include/freetype2/freetype/config/ftconfig.h \
+  ../../../libs/freetype/include/freetype2/freetype/config/ftoption.h \
+  ../../../libs/freetype/include/freetype2/freetype/config/ftstdlib.h \
+  ../../../libs/freetype/include/freetype2/freetype/fterrors.h \
+  ../../../libs/freetype/include/freetype2/freetype/ftmoderr.h \
+  ../../../libs/freetype/include/freetype2/freetype/fterrdef.h \
+  ../../../libs/freetype/include/freetype2/freetype/fttypes.h \
+  ../../../libs/freetype/include/freetype2/freetype/ftsystem.h \
+  ../../../libs/freetype/include/freetype2/freetype/ftimage.h \
+  ../../../libs/freetype/include/freetype2/freetype/ftglyph.h \
+  ../../../libs/freetype/include/freetype2/freetype/ftoutln.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTPoint.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBBox.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBuffer.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGlyph.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBitmapGlyph.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBufferGlyph.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTExtrdGlyph.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTOutlineGlyph.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTPixmapGlyph.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTPolyGlyph.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTTextureGlyph.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTFont.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLBitmapFont.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTBufferFont.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLExtrdFont.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLOutlineFont.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLPixmapFont.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLPolygonFont.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTGLTextureFont.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTLayout.h \
+  ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTSimpleLayout.h \
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/addons/ofxFTGL/src/ofxFTGLSimpleLayout.h

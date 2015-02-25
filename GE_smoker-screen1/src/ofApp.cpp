@@ -9,6 +9,11 @@ void ofApp::setup(){
     //create the widgets
     smokeVelocity.setup("SMOKE VELOCITY", "ft/min", ui.red, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
     humidity.setup("RELATIVE HUMIDITY", "%", ui.blue, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
+    
+    //setup the graph
+    graph.setLeftAxis("Smoke Velocity (f/m)", ui.red, 150, 350);
+    graph.setRightAxis("Relative Humidity (%)", ui.blue, 0, 100);
+    graph.setup();
 }
 
 //--------------------------------------------------------------
@@ -35,6 +40,9 @@ void ofApp::update(){
     
     humidity.update("19.8");
     humidity.draw(100, 940);
+    
+    //draw graph
+    graph.draw(780, 470);
     
     ui.screenFbo.end();
     //*********************************

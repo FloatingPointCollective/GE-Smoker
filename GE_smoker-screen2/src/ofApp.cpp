@@ -7,9 +7,9 @@ void ofApp::setup(){
     dataReader2.setup("tty.usbserial-DA017U1C", 1);
     
     //create the widgets
-    chamberTemp1.setup("CHAMBER TEMP 1", "¡f", ui.green, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
-    chamberTemp2.setup("CHAMBER TEMP 2", "¡f", ui.orange, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
-    chamberTemp3.setup("CHAMBER TEMP 3", "¡f", ui.purple, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
+    chamberTemp1.setup("CHAMBER TEMP 1", "f", ui.green, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
+    chamberTemp2.setup("CHAMBER TEMP 2", "f", ui.orange, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
+    chamberTemp3.setup("CHAMBER TEMP 3", "f", ui.purple, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
 
 }
 
@@ -22,9 +22,9 @@ void ofApp::update(){
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
-    chamberTemp1.update("666.1");
-    chamberTemp2.update("666.2");
-    chamberTemp3.update("666.3");
+    chamberTemp1.update("666.1"+ui.degreeSymbolUnicode);
+    chamberTemp2.update("666.2"+ui.degreeSymbolUnicode);
+    chamberTemp3.update("666.3"+ui.degreeSymbolUnicode);
     
     string msg;
     msg +="OF App\n\n";

@@ -12,7 +12,7 @@ SensorReading::SensorReading(){
     _value = "";
 }
 
-void SensorReading::setup(string label, string units, ofColor color, ofTrueTypeFont * valueFont, ofTrueTypeFont * unitFont, ofTrueTypeFont * labelFont)
+void SensorReading::setup(string label, string units, ofColor color, ofxFTGLFont * valueFont, ofxFTGLFont * unitFont, ofxFTGLFont * labelFont)
 {
     _label = label;
     _units = units;

@@ -10,6 +10,7 @@
 #define __GE_smoker_screen1__uiManager__
 
 #include "ofMain.h"
+#include "ofxFTGL.h"
 
 #endif /* defined(__GE_smoker_screen1__uiManager__) */
 
@@ -21,7 +22,7 @@ class uiManager{
     void draw();
     void keyPressed(int key);
     
-    ofTrueTypeFont fontGE170B, fontGE85B, fontGE54B;
+    ofxFTGLFont fontGE170B, fontGE85B, fontGE54B;
     
     int w, h;
     
@@ -31,5 +32,7 @@ class uiManager{
     bool isFullScreen;
 
     ofColor red, blue, green, orange, purple;
+    
+    string degreeSymbolUnicode;
 
 };
