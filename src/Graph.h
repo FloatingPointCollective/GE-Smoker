@@ -22,6 +22,7 @@ public:
     void setup(string xmlFile);
     void setLeftAxis(string label, int rangeStart, int rangeEnd, int increment);
     void setRightAxis(string label, int rangeStart, int rangeEnd, int increment);
+    void setBothAxis(string label, int rangeStart, int rangeEnd, int increment);
     void addLine(string axis, ofColor color);
     void update();
     void draw(int x, int y);

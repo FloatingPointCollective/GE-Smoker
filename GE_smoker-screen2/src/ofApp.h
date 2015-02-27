@@ -4,6 +4,7 @@
 #include "DataReader.h"
 #include "SensorReading.h"
 #include "uiManager.h"
+#include "Graph.h"
 
 class ofApp : public ofBaseApp{
 	
@@ -27,6 +28,8 @@ class ofApp : public ofBaseApp{
     SensorReading chamberTemp1, chamberTemp2, chamberTemp3;
     
     uiManager ui;
+    
+    Graph graph;
     
 };
 

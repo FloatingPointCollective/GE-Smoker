@@ -44,6 +44,11 @@ void Graph::setRightAxis(string label, int rangeStart, int rangeEnd, int increme
     isRight = true;
 }
 
+void Graph::setBothAxis(string label, int rangeStart, int rangeEnd, int increment){
+    setRightAxis(label, rangeStart, rangeEnd, increment);
+    setLeftAxis(label, rangeStart, rangeEnd, increment);
+}
+
 void Graph::addLine(string axis, ofColor color){
     cout<<"addline"<<endl;
     //add line tag into xml
@@ -193,12 +198,14 @@ void Graph::draw(int x, int y){
     //draw graph template
     graphFbo.draw(x,y);
     
-    //draw line graph
+    //draw lines
     ////LEFT
     if(isLeft){
+        cout<<"draw left line"<<endl;
         //loop through all lines in left axis
         xmlData.pushTag(LEFT);
         for(int i=0; i<xmlData.getNumTags("line"); i++){
+            cout<<"draw line #"<<i<<endl;
             xmlData.pushTag("line",i);
             leftLines[i].draw(x+rangePadding, y+rangePadding);
             xmlData.popTag();
@@ -221,6 +228,7 @@ void Graph::draw(int x, int y){
     }
 }
 
+/*
 void Graph::drawLine(int x, int y, ofColor c, string tagName, int rangeMin, int rangeMax){
     //draw right to left...
     ofSetColor(c);
@@ -245,7 +253,7 @@ void Graph::drawLine(int x, int y, ofColor c, string tagName, int rangeMin, int 
     ofSetLineWidth(5);
     line.draw();
    // xmlData.popTag();
-}
+}*/
 
 void Graph::clearData(){
     cout<<"clear data"<<endl;
