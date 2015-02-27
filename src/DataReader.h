@@ -28,9 +28,10 @@ public:
     float sensorValue;
     string serialData, valueBeingRead;
     
-    bool start;
+    bool start, setupSuccess;
     int readValueNum;
     
     vector<float> sensorValues;
+    
     
 };

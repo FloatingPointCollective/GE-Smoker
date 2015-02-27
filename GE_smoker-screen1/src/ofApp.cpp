@@ -14,6 +14,8 @@ void ofApp::setup(){
     graph.setLeftAxis("Smoke Velocity (f/m)", ui.red, 0, 100, 10);
     graph.setRightAxis("Relative Humidity (%)", ui.blue, 0, 100, 10);
     graph.setup("graphData.xml");
+    
+    graph.clearData();
 }
 
 //--------------------------------------------------------------
@@ -25,6 +27,8 @@ void ofApp::update(){
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
+    ofBackground(255);
+    
     string msg;
     msg +="OF App\n\n";
     msg +="Device 1:\n";
@@ -35,13 +39,21 @@ void ofApp::update(){
     
     //fontGE85B.drawString(msg, 50, 100);
     
-    float sv = dataReader.sensorValues[0];
-    float h = dataReader.sensorValues[1];
+    float sv, h;
+    if(dataReader.setupSuccess){
+        sv = dataReader.sensorValues[0];
+        h = dataReader.sensorValues[1];
+    }
+    else{
+        //generate some rando values...
+        sv = graph.getTestData(graph.LEFT);
+        h = graph.getTestData(graph.RIGHT);
+    }
     
-    smokeVelocity.update(ofToString(sv));
+    smokeVelocity.update(ofToString(sv,1));
     smokeVelocity.draw(100, 640);
     
-    humidity.update(ofToString(h));
+    humidity.update(ofToString(h,2));
     humidity.draw(100, 940);
     
     //draw graph

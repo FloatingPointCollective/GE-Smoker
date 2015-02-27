@@ -9,6 +9,8 @@
 #include "Graph.h"
 
 string Graph::UNDEFINED = "undefined";
+string Graph::LEFT = "left";
+string Graph::RIGHT = "right";
 
 //constructor
 Graph::Graph(){
@@ -74,7 +76,7 @@ void Graph::setup(string xmlFile){
             ofSetColor(0);
             _valueFont.drawString(val, labelFontBounds.height+textPadding, center+valueFontBounds.height/2);
             //draw hor line at center of each value
-            ofSetColor(250);
+            ofSetColor(100);
             
             int left = labelFontBounds.height+valueFontBounds.width+textPadding*2;
             ofRect(left, center, width-left*2, 1);
@@ -115,7 +117,7 @@ void Graph::setup(string xmlFile){
             string val = ofToString(i);
             ofRectangle valueFontBounds = _valueFont.getStringBoundingBox(val, 0, 0);
             int center = height-((height-rangePadding*2)*(cnt/spacing))-rangePadding;
-            _valueFont.drawString(val, width-labelFontBounds.height-valueFontBounds.width-textPadding, center-valueFontBounds.height/2);
+            _valueFont.drawString(val, width-labelFontBounds.height-valueFontBounds.width-textPadding, center+valueFontBounds.height/2);
             //draw hor line at center of each value
             
             cnt++;
@@ -128,6 +130,10 @@ void Graph::setup(string xmlFile){
     xmlData.loadFile(xmlFile);
     xmlData.pushTag("graphData");
 }
+
+/*void Graph::drawVertVals(){
+    
+}*/
 
 void Graph::update(){
     
@@ -145,14 +151,22 @@ void Graph::pushDataToRightAxis(float data){
 }
 
 void Graph::pushData(float data){
-    xmlData.addTag("pt");
-    xmlData.pushTag("pt");
+    int n = xmlData.addTag("pt");
+    //push into the new tag
+    xmlData.pushTag("pt", xmlData.getNumTags("pt")-1);
     xmlData.addValue("value", data);
     xmlData.addValue("time", ofGetTimestampString());
     
+    
+    
     //pop back out to top level
     xmlData.popTag();
+    if(n>100){
+        xmlData.removeTag("pt",0);
+    }
     xmlData.popTag();
+    
+    xmlData.saveFile();
 }
 
 void Graph::draw(int x, int y){
@@ -163,23 +177,64 @@ void Graph::draw(int x, int y){
     //draw line graph
     ////LEFT
     if(isLeft){
-        //draw right to left...
-        ofSetColor(lineColorLeft);
-       //loop through xml data
-        xmlData.pushTag("leftAxis");
-        ofPolyline line;
-        for(int i=0;i<xmlData.getNumTags("pt"); i++){
-            float v = xmlData.getValue("pt:value", 0, i);
-            float mappedY = ofMap(v, rangeStartLeft, rangeEndLeft, 0, height-rangePadding*2);
-            line.addVertex(x+width-rangePadding-i*10, y+height-mappedY-rangePadding);
+        drawLine(x,y,lineColorLeft, "leftAxis",rangeStartLeft,rangeEndLeft);
+    }
+    
+    ////RIGHT
+    if(isRight){
+        drawLine(x,y,lineColorRight, "rightAxis",rangeStartRight,rangeEndRight);
+    }
+}
+
+void Graph::drawLine(int x, int y, ofColor c, string tagName, int rangeMin, int rangeMax){
+    //draw right to left...
+    ofSetColor(c);
+    //loop through xml data
+    xmlData.pushTag(tagName);
+    ofPolyline line;
+    int numPts = xmlData.getNumTags("pt");
+    int xPos;
+    for(int i=0;i<numPts; i++){
+        float v = xmlData.getValue("pt:value", 0, numPts-i-1);
+        float mappedY = ofMap(v, rangeMin, rangeMax, 0, height-rangePadding*2);
+        xPos = x+width-rangePadding-i*10;
+        line.addVertex(xPos, y+height-mappedY-rangePadding);
+        
+        if(xPos<x+rangePadding){
+            //remove the first tag
+            xmlData.removeTag("pt",0);
+            xmlData.saveFile();
         }
-        ofSetLineWidth(5);
-        line.draw();
+    }
+    
+    ofSetLineWidth(5);
+    line.draw();
+    xmlData.popTag();
+}
+
+void Graph::clearData(){
+    cout<<"clear data"<<endl;
+    if(isLeft){
+        xmlData.pushTag("leftAxis");
+        while(xmlData.getNumTags("pt")){
+            xmlData.removeTag("pt");
+        }
         xmlData.popTag();
     }
     
     ////RIGHT
     if(isRight){
-        
+        xmlData.pushTag("rightAxis");
+        while(xmlData.getNumTags("pt")){
+            xmlData.removeTag("pt");
+        }
+        xmlData.popTag();
     }
+}
+
+float Graph::getTestData(string side){
+    if(side == LEFT)
+        return ofRandom(rangeStartLeft, rangeEndLeft);
+    else if (side == RIGHT)
+        return ofRandom(rangeStartRight, rangeEndRight);
 }

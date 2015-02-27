@@ -43,15 +43,19 @@ uiManager::uiManager(){
 void uiManager::update(){
     //read FBO to image
     screenFbo.readToPixels(screenImage);
+    screenImage.update();
     //scale the screen image based on the screen size
     int newHeight = (ofGetWidth()*h)/w;
-    screenImage.resize(ofGetWidth(), newHeight);
+   // screenImage.resize(ofGetWidth(), newHeight);
 }
 
 void uiManager::draw(){
     //don't forget to reset the color to white tho!
     ofSetColor(255);
-    screenImage.draw(0,0);
+    
+    int newHeight = (ofGetWidth()*h)/w;
+    screenFbo.draw(0,0,ofGetWidth(),newHeight);
+    //screenImage.draw(0,0);
 }
 
 void uiManager::keyPressed(int key){

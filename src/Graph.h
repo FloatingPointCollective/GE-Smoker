@@ -26,6 +26,8 @@ public:
     void pushDataToLeftAxis(float data);
     void pushDataToRightAxis(float data);
     void pushData(float data);
+    void clearData();
+    float getTestData(string side);
     
     ofFbo graphFbo;
     string labelLeft, labelRight;
@@ -33,7 +35,11 @@ public:
     int rangeStartLeft, rangeStartRight, rangeEndLeft, rangeEndRight, incrementLeft, incrementRight;
     int rangePadding, width, height;
     
+    static string LEFT, RIGHT;
+    
 private:
+    void drawLine(int x, int y, ofColor c, string tagName, int rangeMin, int rangeMax);
+    
     ofxFTGLFont _labelFont, _valueFont;
     ofxXmlSettings xmlData;
     bool isLeft, isRight;

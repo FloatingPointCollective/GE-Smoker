@@ -19,7 +19,7 @@ void DataReader::setup(string deviceName, int numSensors){
     int baud = 9600;
     //serial.setup(0, baud); //open the first device
     //serial.setup("COM4", baud); // windows example
-    serial.setup(deviceName, baud); // mac osx example
+    setupSuccess = serial.setup(deviceName, baud); // mac osx example
     //serial.setup("/dev/ttyUSB0", baud); //linux example
     
     serialData = "";
