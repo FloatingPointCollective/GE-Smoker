@@ -1,0 +1,37 @@
+<graphData>
+	
+	<leftAxis>
+		<pt>
+			<value>10</value>
+			<time></time>
+		</pt>
+		<pt>
+			<value>20</value>
+			<time></time>
+		</pt>
+		<pt>
+			<value>30</value>
+			<time></time>
+		</pt>
+		<pt>
+			<value>50</value>
+			<time></time>
+		</pt>
+		<pt>
+			<value>13</value>
+			<time></time>
+		</pt>
+		<pt>
+			<value>20</value>
+			<time></time>
+		</pt>
+	</leftAxis>
+
+	<rightAxis>
+		<pt>
+			<value> </value>
+			<time> </time>
+		</pt>
+	</rightAxis>
+
+</graphData>

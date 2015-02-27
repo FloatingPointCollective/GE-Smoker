@@ -212,4 +212,6 @@ dependencies: \
   ../../../addons/ofxFTGL/libs/FTGL/include/FTGL/FTSimpleLayout.h \
   /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/addons/ofxFTGL/src/ofxFTGLSimpleLayout.h \
   /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/uiManager.h \
-  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/Graph.h
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/apps/GE-Smoker/src/Graph.h \
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/addons/ofxXmlSettings/src/ofxXmlSettings.h \
+  /Volumes/HDD/OpenFrameworks/of_v0.8.4_osx_release/addons/ofxXmlSettings/libs/tinyxml.h
