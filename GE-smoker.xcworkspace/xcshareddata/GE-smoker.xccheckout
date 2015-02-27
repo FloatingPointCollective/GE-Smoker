@@ -20,7 +20,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2A0CFE1019F698B00C9572577BCC47738F98F3F2</key>
-		<string>../../../addons/ofxFTGL</string>
+		<string>../../addons/ofxFTGL</string>
 		<key>C0CD73B3805CEED0FD0116A896ED0A1DF5FBDED9</key>
 		<string>..</string>
 	</dict>
