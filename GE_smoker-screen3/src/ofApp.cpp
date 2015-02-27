@@ -21,16 +21,18 @@ void ofApp::update(){
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
+    ofBackground(255);
+    
     meatTemp1.update("166.1");
     meatTemp2.update("266.2");
     
-    string msg;
+   /* string msg;
     msg +="OF App\n\n";
     msg +="Device 1:\n";
     msg += "RH: " + ofToString(dataReader.sensorValues[0]) + "\n";
     msg += "Temp: " + ofToString(dataReader.sensorValues[1]) + "\n\n";
     msg +="Device 2:\n";
-    msg += "Temp: " + ofToString(dataReader2.sensorValues[0]) + "\n";
+    msg += "Temp: " + ofToString(dataReader2.sensorValues[0]) + "\n";*/
     
     //fontGE85B.drawString(msg, 50, 100);
     
