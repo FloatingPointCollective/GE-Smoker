@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		234D95B71AA107FC00A758A1 /* GraphLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95B51AA107FC00A758A1 /* GraphLine.cpp */; };
 		2372BD141A9D44BC00D83887 /* DataReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD101A9D44BC00D83887 /* DataReader.cpp */; };
 		2372BD151A9D44BC00D83887 /* SensorReading.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD121A9D44BC00D83887 /* SensorReading.cpp */; };
 		2372BD181A9D71C400D83887 /* uiManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD161A9D71C400D83887 /* uiManager.cpp */; };
@@ -70,6 +71,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		234D95B51AA107FC00A758A1 /* GraphLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GraphLine.cpp; path = ../../src/GraphLine.cpp; sourceTree = "<group>"; };
+		234D95B61AA107FC00A758A1 /* GraphLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphLine.h; path = ../../src/GraphLine.h; sourceTree = "<group>"; };
 		2372BD101A9D44BC00D83887 /* DataReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataReader.cpp; path = ../../src/DataReader.cpp; sourceTree = "<group>"; };
 		2372BD111A9D44BC00D83887 /* DataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataReader.h; path = ../../src/DataReader.h; sourceTree = "<group>"; };
 		2372BD121A9D44BC00D83887 /* SensorReading.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SensorReading.cpp; path = ../../src/SensorReading.cpp; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 			children = (
 				AE78C5521AA003F200A9A4E2 /* Graph.cpp */,
 				AE78C5531AA003F200A9A4E2 /* Graph.h */,
+				234D95B51AA107FC00A758A1 /* GraphLine.cpp */,
+				234D95B61AA107FC00A758A1 /* GraphLine.h */,
 				2372BD121A9D44BC00D83887 /* SensorReading.cpp */,
 				2372BD131A9D44BC00D83887 /* SensorReading.h */,
 			);
@@ -497,6 +502,7 @@
 				AE78C54E1AA0039600A9A4E2 /* ofxXmlSettings.cpp in Sources */,
 				2372BD151A9D44BC00D83887 /* SensorReading.cpp in Sources */,
 				2372BD181A9D71C400D83887 /* uiManager.cpp in Sources */,
+				234D95B71AA107FC00A758A1 /* GraphLine.cpp in Sources */,
 				2372BD541A9E5EEC00D83887 /* ofxFTGLFont.cpp in Sources */,
 				2372BD1A1A9D791600D83887 /* main.cpp in Sources */,
 				AE78C5501AA0039600A9A4E2 /* tinyxmlerror.cpp in Sources */,

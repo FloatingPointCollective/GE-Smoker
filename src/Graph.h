@@ -12,6 +12,7 @@
 #include "ofMain.h"
 #include "ofxFTGL.h"
 #include "ofxXmlSettings.h"
+#include "GraphLine.h"
 
 #endif /* defined(__GE_smoker_screen1__Graph__) */
 
@@ -19,19 +20,19 @@ class Graph{
 public:
     Graph();
     void setup(string xmlFile);
-    void setLeftAxis(string label, ofColor color, int rangeStart, int rangeEnd, int increment);
-    void setRightAxis(string label, ofColor color, int rangeStart, int rangeEnd, int increment);
+    void setLeftAxis(string label, int rangeStart, int rangeEnd, int increment);
+    void setRightAxis(string label, int rangeStart, int rangeEnd, int increment);
+    void addLine(string axis, ofColor color);
     void update();
     void draw(int x, int y);
-    void pushDataToLeftAxis(float data);
-    void pushDataToRightAxis(float data);
+    void pushDataToLeftAxis(float data, int which = 0);
+    void pushDataToRightAxis(float data, int which = 0);
     void pushData(float data);
     void clearData();
     float getTestData(string side);
     
     ofFbo graphFbo;
     string labelLeft, labelRight;
-    ofColor lineColorLeft, lineColorRight;
     int rangeStartLeft, rangeStartRight, rangeEndLeft, rangeEndRight, incrementLeft, incrementRight;
     int rangePadding, width, height;
     
@@ -43,6 +44,7 @@ private:
     ofxFTGLFont _labelFont, _valueFont;
     ofxXmlSettings xmlData;
     bool isLeft, isRight;
+    vector <GraphLine> leftLines, rightLines;
     
     //statics
     static string UNDEFINED;

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		234D95A41AA0312A00A758A1 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95A21AA0312A00A758A1 /* Graph.cpp */; };
+		234D95A71AA105A700A758A1 /* GraphLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95A51AA105A700A758A1 /* GraphLine.cpp */; };
+		234D95B11AA105CB00A758A1 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95AA1AA105CB00A758A1 /* ofxXmlSettings.cpp */; };
+		234D95B21AA105CB00A758A1 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95AD1AA105CB00A758A1 /* tinyxml.cpp */; };
+		234D95B31AA105CB00A758A1 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95AF1AA105CB00A758A1 /* tinyxmlerror.cpp */; };
+		234D95B41AA105CB00A758A1 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95B01AA105CB00A758A1 /* tinyxmlparser.cpp */; };
 		2372BD141A9D44BC00D83887 /* DataReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD101A9D44BC00D83887 /* DataReader.cpp */; };
 		2372BD151A9D44BC00D83887 /* SensorReading.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD121A9D44BC00D83887 /* SensorReading.cpp */; };
 		2372BD181A9D71C400D83887 /* uiManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD161A9D71C400D83887 /* uiManager.cpp */; };
@@ -68,6 +73,14 @@
 /* Begin PBXFileReference section */
 		234D95A21AA0312A00A758A1 /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Graph.cpp; path = ../../src/Graph.cpp; sourceTree = "<group>"; };
 		234D95A31AA0312A00A758A1 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Graph.h; path = ../../src/Graph.h; sourceTree = "<group>"; };
+		234D95A51AA105A700A758A1 /* GraphLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GraphLine.cpp; path = ../../src/GraphLine.cpp; sourceTree = "<group>"; };
+		234D95A61AA105A700A758A1 /* GraphLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GraphLine.h; path = ../../src/GraphLine.h; sourceTree = "<group>"; };
+		234D95AA1AA105CB00A758A1 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
+		234D95AB1AA105CB00A758A1 /* ofxXmlSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
+		234D95AD1AA105CB00A758A1 /* tinyxml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
+		234D95AE1AA105CB00A758A1 /* tinyxml.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = tinyxml.h; sourceTree = "<group>"; };
+		234D95AF1AA105CB00A758A1 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlerror.cpp; sourceTree = "<group>"; };
+		234D95B01AA105CB00A758A1 /* tinyxmlparser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxmlparser.cpp; sourceTree = "<group>"; };
 		2372BD101A9D44BC00D83887 /* DataReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataReader.cpp; path = ../../src/DataReader.cpp; sourceTree = "<group>"; };
 		2372BD111A9D44BC00D83887 /* DataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataReader.h; path = ../../src/DataReader.h; sourceTree = "<group>"; };
 		2372BD121A9D44BC00D83887 /* SensorReading.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SensorReading.cpp; path = ../../src/SensorReading.cpp; sourceTree = "<group>"; };
@@ -156,6 +169,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		234D95A81AA105CB00A758A1 /* ofxXmlSettings */ = {
+			isa = PBXGroup;
+			children = (
+				234D95A91AA105CB00A758A1 /* src */,
+				234D95AC1AA105CB00A758A1 /* libs */,
+			);
+			name = ofxXmlSettings;
+			sourceTree = "<group>";
+		};
+		234D95A91AA105CB00A758A1 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				234D95AA1AA105CB00A758A1 /* ofxXmlSettings.cpp */,
+				234D95AB1AA105CB00A758A1 /* ofxXmlSettings.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxXmlSettings/src;
+			sourceTree = "<group>";
+		};
+		234D95AC1AA105CB00A758A1 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				234D95AD1AA105CB00A758A1 /* tinyxml.cpp */,
+				234D95AE1AA105CB00A758A1 /* tinyxml.h */,
+				234D95AF1AA105CB00A758A1 /* tinyxmlerror.cpp */,
+				234D95B01AA105CB00A758A1 /* tinyxmlparser.cpp */,
+			);
+			name = libs;
+			path = ../../../addons/ofxXmlSettings/libs;
+			sourceTree = "<group>";
+		};
 		2351EFED1A9D0CFE00569E24 /* uiComponents */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +207,8 @@
 				234D95A31AA0312A00A758A1 /* Graph.h */,
 				2372BD121A9D44BC00D83887 /* SensorReading.cpp */,
 				2372BD131A9D44BC00D83887 /* SensorReading.h */,
+				234D95A51AA105A700A758A1 /* GraphLine.cpp */,
+				234D95A61AA105A700A758A1 /* GraphLine.h */,
 			);
 			name = uiComponents;
 			sourceTree = "<group>";
@@ -271,6 +317,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				234D95A81AA105CB00A758A1 /* ofxXmlSettings */,
 				2372BD251A9E5EEC00D83887 /* ofxFTGL */,
 			);
 			name = addons;
@@ -447,13 +494,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				234D95B31AA105CB00A758A1 /* tinyxmlerror.cpp in Sources */,
 				2372BD141A9D44BC00D83887 /* DataReader.cpp in Sources */,
 				2372BD551A9E5EEC00D83887 /* ofxFTGLSimpleLayout.cpp in Sources */,
 				2372BD151A9D44BC00D83887 /* SensorReading.cpp in Sources */,
 				2372BD181A9D71C400D83887 /* uiManager.cpp in Sources */,
 				234D95A41AA0312A00A758A1 /* Graph.cpp in Sources */,
+				234D95B21AA105CB00A758A1 /* tinyxml.cpp in Sources */,
 				2372BD541A9E5EEC00D83887 /* ofxFTGLFont.cpp in Sources */,
+				234D95B41AA105CB00A758A1 /* tinyxmlparser.cpp in Sources */,
+				234D95A71AA105A700A758A1 /* GraphLine.cpp in Sources */,
 				2372BD1A1A9D791600D83887 /* main.cpp in Sources */,
+				234D95B11AA105CB00A758A1 /* ofxXmlSettings.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

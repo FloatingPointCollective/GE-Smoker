@@ -9,8 +9,8 @@
 #include "Graph.h"
 
 string Graph::UNDEFINED = "undefined";
-string Graph::LEFT = "left";
-string Graph::RIGHT = "right";
+string Graph::LEFT = "leftAxis";
+string Graph::RIGHT = "rightAxis";
 
 //constructor
 Graph::Graph(){
@@ -26,22 +26,44 @@ Graph::Graph(){
     isRight = false;
 }
 
-void Graph::setLeftAxis(string label, ofColor color, int rangeStart, int rangeEnd, int increment){
+void Graph::setLeftAxis(string label, int rangeStart, int rangeEnd, int increment){
     labelLeft = label;
-    lineColorLeft = color;
+    //lineColorLeft = color;
     rangeStartLeft = rangeStart;
     rangeEndLeft = rangeEnd;
     incrementLeft = increment;
     isLeft = true;
 }
 
-void Graph::setRightAxis(string label, ofColor color, int rangeStart, int rangeEnd, int increment){
+void Graph::setRightAxis(string label, int rangeStart, int rangeEnd, int increment){
     labelRight = label;
-    lineColorRight = color;
+    //lineColorRight = color;
     rangeStartRight = rangeStart;
     rangeEndRight = rangeEnd;
     incrementRight = increment;
     isRight = true;
+}
+
+void Graph::addLine(string axis, ofColor color){
+    cout<<"addline"<<endl;
+    //add line tag into xml
+    xmlData.pushTag(axis);
+    xmlData.addTag("line");
+    xmlData.popTag();
+    xmlData.saveFile();
+    
+    //create new line object and push it into array
+    GraphLine line;
+    if(axis == LEFT){
+        line.setup(width-rangePadding*2, height-rangePadding*2, color, rangeStartLeft, rangeEndLeft, &xmlData);
+        leftLines.push_back(line);
+    }
+    else if(axis == RIGHT){
+        line.setup(width-rangePadding*2, height-rangePadding*2, color, rangeStartRight, rangeEndRight, &xmlData);
+        rightLines.push_back(line);
+    }
+    
+    
 }
 
 void Graph::setup(string xmlFile){
@@ -131,22 +153,19 @@ void Graph::setup(string xmlFile){
     xmlData.pushTag("graphData");
 }
 
-/*void Graph::drawVertVals(){
-    
-}*/
-
 void Graph::update(){
     
 }
 
-void Graph::pushDataToLeftAxis(float data){
-
+void Graph::pushDataToLeftAxis(float data, int which){
     xmlData.pushTag("leftAxis");
+    xmlData.pushTag("line",which);
     pushData(data);
 }
 
-void Graph::pushDataToRightAxis(float data){
+void Graph::pushDataToRightAxis(float data, int which){
     xmlData.pushTag("rightAxis");
+    xmlData.pushTag("line",which);
     pushData(data);
 }
 
@@ -157,13 +176,13 @@ void Graph::pushData(float data){
     xmlData.addValue("value", data);
     xmlData.addValue("time", ofGetTimestampString());
     
-    
-    
     //pop back out to top level
     xmlData.popTag();
     if(n>100){
         xmlData.removeTag("pt",0);
     }
+    
+    xmlData.popTag();
     xmlData.popTag();
     
     xmlData.saveFile();
@@ -177,12 +196,28 @@ void Graph::draw(int x, int y){
     //draw line graph
     ////LEFT
     if(isLeft){
-        drawLine(x,y,lineColorLeft, "leftAxis",rangeStartLeft,rangeEndLeft);
+        //loop through all lines in left axis
+        xmlData.pushTag(LEFT);
+        for(int i=0; i<xmlData.getNumTags("line"); i++){
+            xmlData.pushTag("line",i);
+            leftLines[i].draw(x+rangePadding, y+rangePadding);
+            xmlData.popTag();
+        }
+        //drawLine(x,y,lineColorLeft, "leftAxis",rangeStartLeft,rangeEndLeft);
+        xmlData.popTag();
     }
     
     ////RIGHT
     if(isRight){
-        drawLine(x,y,lineColorRight, "rightAxis",rangeStartRight,rangeEndRight);
+        //loop through all lines in right axis
+        xmlData.pushTag(RIGHT);
+        for(int i=0; i<xmlData.getNumTags("line"); i++){
+            xmlData.pushTag("line",i);
+            rightLines[i].draw(x+rangePadding, y+rangePadding);
+            xmlData.popTag();
+        }
+        //drawLine(x,y,lineColorRight, "rightAxis",rangeStartRight,rangeEndRight);
+        xmlData.popTag();
     }
 }
 
@@ -190,7 +225,7 @@ void Graph::drawLine(int x, int y, ofColor c, string tagName, int rangeMin, int 
     //draw right to left...
     ofSetColor(c);
     //loop through xml data
-    xmlData.pushTag(tagName);
+    //xmlData.pushTag(tagName);
     ofPolyline line;
     int numPts = xmlData.getNumTags("pt");
     int xPos;
@@ -209,15 +244,15 @@ void Graph::drawLine(int x, int y, ofColor c, string tagName, int rangeMin, int 
     
     ofSetLineWidth(5);
     line.draw();
-    xmlData.popTag();
+   // xmlData.popTag();
 }
 
 void Graph::clearData(){
     cout<<"clear data"<<endl;
     if(isLeft){
         xmlData.pushTag("leftAxis");
-        while(xmlData.getNumTags("pt")){
-            xmlData.removeTag("pt");
+        while(xmlData.getNumTags("line")){
+            xmlData.removeTag("line");
         }
         xmlData.popTag();
     }
@@ -225,8 +260,8 @@ void Graph::clearData(){
     ////RIGHT
     if(isRight){
         xmlData.pushTag("rightAxis");
-        while(xmlData.getNumTags("pt")){
-            xmlData.removeTag("pt");
+        while(xmlData.getNumTags("line")){
+            xmlData.removeTag("line");
         }
         xmlData.popTag();
     }

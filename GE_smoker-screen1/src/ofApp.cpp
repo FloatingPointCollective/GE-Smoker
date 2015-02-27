@@ -11,11 +11,15 @@ void ofApp::setup(){
     humidity.setup("RELATIVE HUMIDITY", "%", ui.blue, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
     
     //setup the graph
-    graph.setLeftAxis("Smoke Velocity (f/m)", ui.red, 0, 100, 10);
-    graph.setRightAxis("Relative Humidity (%)", ui.blue, 0, 100, 10);
+    graph.setLeftAxis("Smoke Velocity (f/m)", 0, 100, 10);
+    graph.setRightAxis("Relative Humidity (%)", 0, 100, 10);
     graph.setup("graphData.xml");
-    
     graph.clearData();
+    graph.addLine(graph.LEFT, ui.red);
+    graph.addLine(graph.RIGHT, ui.blue);
+
+    
+    
 }
 
 //--------------------------------------------------------------
