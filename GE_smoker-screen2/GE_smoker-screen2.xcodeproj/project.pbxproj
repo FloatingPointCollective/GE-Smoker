@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		234D95A41AA0312A00A758A1 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95A21AA0312A00A758A1 /* Graph.cpp */; };
 		2372BD141A9D44BC00D83887 /* DataReader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD101A9D44BC00D83887 /* DataReader.cpp */; };
 		2372BD151A9D44BC00D83887 /* SensorReading.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD121A9D44BC00D83887 /* SensorReading.cpp */; };
 		2372BD181A9D71C400D83887 /* uiManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD161A9D71C400D83887 /* uiManager.cpp */; };
@@ -65,6 +66,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		234D95A21AA0312A00A758A1 /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Graph.cpp; path = ../../src/Graph.cpp; sourceTree = "<group>"; };
+		234D95A31AA0312A00A758A1 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Graph.h; path = ../../src/Graph.h; sourceTree = "<group>"; };
 		2372BD101A9D44BC00D83887 /* DataReader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataReader.cpp; path = ../../src/DataReader.cpp; sourceTree = "<group>"; };
 		2372BD111A9D44BC00D83887 /* DataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DataReader.h; path = ../../src/DataReader.h; sourceTree = "<group>"; };
 		2372BD121A9D44BC00D83887 /* SensorReading.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SensorReading.cpp; path = ../../src/SensorReading.cpp; sourceTree = "<group>"; };
@@ -156,6 +159,8 @@
 		2351EFED1A9D0CFE00569E24 /* uiComponents */ = {
 			isa = PBXGroup;
 			children = (
+				234D95A21AA0312A00A758A1 /* Graph.cpp */,
+				234D95A31AA0312A00A758A1 /* Graph.h */,
 				2372BD121A9D44BC00D83887 /* SensorReading.cpp */,
 				2372BD131A9D44BC00D83887 /* SensorReading.h */,
 			);
@@ -446,6 +451,7 @@
 				2372BD551A9E5EEC00D83887 /* ofxFTGLSimpleLayout.cpp in Sources */,
 				2372BD151A9D44BC00D83887 /* SensorReading.cpp in Sources */,
 				2372BD181A9D71C400D83887 /* uiManager.cpp in Sources */,
+				234D95A41AA0312A00A758A1 /* Graph.cpp in Sources */,
 				2372BD541A9E5EEC00D83887 /* ofxFTGLFont.cpp in Sources */,
 				2372BD1A1A9D791600D83887 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
