@@ -5,9 +5,9 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>EFB20EA8-3EC4-489F-A30C-790C399D8C2A</string>
+	<string>71B2FACB-DA9D-4AC9-9A32-DB4BCD749780</string>
 	<key>IDESourceControlProjectName</key>
-	<string>GE_smoker-screen1</string>
+	<string>GE_smoker-screen2</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>2A0CFE1019F698B00C9572577BCC47738F98F3F2</key>
@@ -16,7 +16,7 @@
 		<string>https://github.com/FloatingPointCollective/GE-Smoker.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GE_smoker-screen1/GE_smoker-screen1.xcodeproj</string>
+	<string>GE_smoker-screen1/GE_smoker-screen2.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>2A0CFE1019F698B00C9572577BCC47738F98F3F2</key>
