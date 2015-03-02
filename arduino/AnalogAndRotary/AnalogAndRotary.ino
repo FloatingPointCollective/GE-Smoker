@@ -177,7 +177,8 @@ void loop()
   //Time = (ReadingNumber/1000.0*TimeBetweenReadings);
   //Serial.print(Time); // print time in seconds
   //Serial.print("\t"); //tab character
-  Serial.print(encoderPos*res);   // display angle in degrees                               
+  Serial.print(encoderPos*res);   // display angle in degrees
+  encoderPos = 0;  
   //delay(TimeBetweenReadings); // Delay a bit...
   //ReadingNumber++;
 

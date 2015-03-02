@@ -20,6 +20,8 @@ void ofApp::setup(){
 
     ui.startTimer();
     
+    lastRot = 0;
+    
 }
 
 //--------------------------------------------------------------
@@ -37,9 +39,13 @@ void ofApp::update(){
     ofBackground(255);
     
     float sv, h;
+    int rot;
     if(dataReader.setupSuccess){
-        sv = dataReader.sensorValues[1];
+        if(ui.timePassed > 500){
+            rot = dataReader.sensorValues[1];
+        }
         h = dataReader.sensorValues[0];
+        
     }
     else{
         //generate some rando values...
@@ -47,20 +53,40 @@ void ofApp::update(){
         h = graph.getTestData(graph.RIGHT);
     }
     
-    smokeVelocity.update(ofToString(sv,1));
+    
+    //update graph every second
+    if(ui.timePassed > 500){
+        //sv = (lastRot - rot)/100;
+        //sv = rot/100;
+        
+        //d is the diameter of the blade in feet
+        float d = 3.5/12;
+        // C is circumference, over 60 to calculate movement per minute
+        float C = (M_PI * d);
+        sv = (C*rot/360)*60;
+        
+        //lastRot = rot;
+        
+        
+        cout<<"read value 1: "<<rot<<endl;
+        //add data to graph
+        graph.pushDataToLeftAxis(sv);
+        graph.pushDataToRightAxis(h);
+        
+        smokeVelocity.update(ofToString(sv,1));
+        
+        ui.resetTimer();
+        
+        
+    }
+    
+    
     smokeVelocity.draw(100, 640);
     
     humidity.update(ofToString(h,2));
     humidity.draw(100, 940);
+
     
-    //update graph every second
-    if(ui.timePassed > 500){
-    //add data to graph
-    graph.pushDataToLeftAxis(sv);
-    graph.pushDataToRightAxis(h);
-        ui.resetTimer();
-    
-    }
     graph.draw(780, 470);
     ui.screenFbo.end();
     //*********************************

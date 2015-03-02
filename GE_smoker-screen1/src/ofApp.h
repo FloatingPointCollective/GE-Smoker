@@ -25,6 +25,7 @@ class ofApp : public ofBaseApp{
 		
 
     float sensorValue;
+    int lastRot;
     int readSensor;
     string serialData;
     
