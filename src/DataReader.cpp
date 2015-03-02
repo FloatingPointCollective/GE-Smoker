@@ -66,6 +66,8 @@ void DataReader::update(){
             }
         }
         
+        //serial.flush();
+        
     }
     
 }

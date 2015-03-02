@@ -182,11 +182,11 @@ void loop()
   //ReadingNumber++;
 
   //FLASH LED?
-  if(flashLED){
+ // if(flashLED){
   delay(TimeBetweenReadings/2);// delay half of period
   digitalWrite(led, LOW);// LED on D13 flashes once per readng
   delay(TimeBetweenReadings/2);// delay the other half
-  }
+  //}
   ReadingNumber++;
   
   Serial.flush();  
