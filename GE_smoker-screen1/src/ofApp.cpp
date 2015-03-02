@@ -24,9 +24,9 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    ui.update();
-    if(ui.secondsPassed > 1){
-        ui.resetTimer();
+    //ui.update();
+    
+    
     
     dataReader.update();
     //dataReader2.update();
@@ -53,16 +53,20 @@ void ofApp::update(){
     humidity.update(ofToString(h,2));
     humidity.draw(100, 940);
     
-    //draw graph
+    //update graph every second
+    if(ui.timePassed > 500){
+    //add data to graph
     graph.pushDataToLeftAxis(sv);
     graph.pushDataToRightAxis(h);
-    graph.draw(780, 470);
+        ui.resetTimer();
     
+    }
+    graph.draw(780, 470);
     ui.screenFbo.end();
     //*********************************
     
-    //ui.update();
-    }
+    ui.update();
+    
 }
 
 //--------------------------------------------------------------

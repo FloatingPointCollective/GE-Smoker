@@ -50,6 +50,7 @@ void uiManager::update(){
     int newHeight = (ofGetWidth()*h)/w;
    // screenImage.resize(ofGetWidth(), newHeight);
     secondsPassed = (ofGetElapsedTimeMillis() - startTime)/1000;
+    timePassed = ofGetElapsedTimeMillis() - startTime;
 }
 
 void uiManager::draw(){
