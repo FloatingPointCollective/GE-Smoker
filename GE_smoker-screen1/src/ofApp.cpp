@@ -18,35 +18,28 @@ void ofApp::setup(){
     graph.addLine(graph.LEFT, ui.red);
     graph.addLine(graph.RIGHT, ui.blue);
 
-    
+    ui.startTimer();
     
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+    ui.update();
+    if(ui.secondsPassed > 1){
+        ui.resetTimer();
     
     dataReader.update();
-    dataReader2.update();
+    //dataReader2.update();
     
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
     ofBackground(255);
     
-    /*string msg;
-    msg +="OF App\n\n";
-    msg +="Device 1:\n";
-    msg += "RH: " + ofToString(dataReader.sensorValues[0]) + "\n";
-    msg += "Temp: " + ofToString(dataReader.sensorValues[1]) + "\n\n";
-    msg +="Device 2:\n";
-    msg += "Temp: " + ofToString(dataReader2.sensorValues[0]) + "\n";
-    */
-    //fontGE85B.drawString(msg, 50, 100);
-    
     float sv, h;
     if(dataReader.setupSuccess){
-        sv = dataReader.sensorValues[0];
-        h = dataReader.sensorValues[1];
+        sv = dataReader.sensorValues[1];
+        h = dataReader.sensorValues[0];
     }
     else{
         //generate some rando values...
@@ -68,8 +61,8 @@ void ofApp::update(){
     ui.screenFbo.end();
     //*********************************
     
-    ui.update();
-    
+    //ui.update();
+    }
 }
 
 //--------------------------------------------------------------

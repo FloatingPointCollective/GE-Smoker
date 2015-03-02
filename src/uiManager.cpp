@@ -38,6 +38,8 @@ uiManager::uiManager(){
     isFullScreen = true;
     
     degreeSymbolUnicode = "\u00B0";
+    
+    lastTime = ofGetElapsedTimeMillis();
 }
 
 void uiManager::update(){
@@ -47,6 +49,7 @@ void uiManager::update(){
     //scale the screen image based on the screen size
     int newHeight = (ofGetWidth()*h)/w;
    // screenImage.resize(ofGetWidth(), newHeight);
+    secondsPassed = (ofGetElapsedTimeMillis() - startTime)/1000;
 }
 
 void uiManager::draw(){
@@ -65,4 +68,12 @@ void uiManager::keyPressed(int key){
             ofSetFullscreen(isFullScreen);
             break;
     }
+}
+
+void uiManager::startTimer(){
+    startTime = ofGetElapsedTimeMillis();
+}
+
+void uiManager::resetTimer(){
+    startTimer();
 }

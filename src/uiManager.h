@@ -21,10 +21,13 @@ class uiManager{
     void update();
     void draw();
     void keyPressed(int key);
+    void startTimer();
+    void resetTimer();
     
     ofxFTGLFont fontGE170B, fontGE85B, fontGE54B;
     
-    int w, h;
+    int w, h, startTime;
+    float secondsPassed;
     
     ofFbo screenFbo;
     ofImage screenImage;
@@ -34,5 +37,9 @@ class uiManager{
     ofColor red, blue, green, orange, purple;
     
     string degreeSymbolUnicode;
+    
+private:
+    int lastTime;
+    
 
 };

@@ -1,8 +1,50 @@
 <graphData>
     <leftAxis>
-        <line></line>
+        <line>
+            <pt>
+                <value>75.688079834</value>
+                <time>2015-03-02-12-42-31-501</time>
+            </pt>
+            <pt>
+                <value>74.682868958</value>
+                <time>2015-03-02-12-42-33-464</time>
+            </pt>
+            <pt>
+                <value>57.777713776</value>
+                <time>2015-03-02-12-42-36-097</time>
+            </pt>
+            <pt>
+                <value>25.644483566</value>
+                <time>2015-03-02-12-42-38-099</time>
+            </pt>
+            <pt>
+                <value>97.295684814</value>
+                <time>2015-03-02-12-42-40-112</time>
+            </pt>
+        </line>
     </leftAxis>
     <rightAxis>
-        <line></line>
+        <line>
+            <pt>
+                <value>89.473114014</value>
+                <time>2015-03-02-12-42-31-502</time>
+            </pt>
+            <pt>
+                <value>94.981719971</value>
+                <time>2015-03-02-12-42-33-465</time>
+            </pt>
+            <pt>
+                <value>70.037818909</value>
+                <time>2015-03-02-12-42-36-097</time>
+            </pt>
+            <pt>
+                <value>6.854125977</value>
+                <time>2015-03-02-12-42-38-099</time>
+            </pt>
+            <pt>
+                <value>48.596099854</value>
+                <time>2015-03-02-12-42-40-113</time>
+            </pt>
+        </line>
     </rightAxis>
 </graphData>

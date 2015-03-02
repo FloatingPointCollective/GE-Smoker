@@ -53,7 +53,7 @@ void DataReader::update(){
                 readValueNum = 0;
                 valueBeingRead = "";
             }
-            else if(serialData =="-"){
+            else if(serialData ==_delimiter){
                 //store last value
                 sensorValues[readValueNum] = ofToFloat(valueBeingRead);
                 //read next value
