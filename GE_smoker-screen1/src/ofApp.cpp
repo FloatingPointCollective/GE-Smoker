@@ -26,7 +26,7 @@ void ofApp::setup(){
 void ofApp::update(){
     
     dataReader.update();
-    dataReader2.update();
+    //dataReader2.update();
     
     //draw everything to the screen FBO
     ui.screenFbo.begin();

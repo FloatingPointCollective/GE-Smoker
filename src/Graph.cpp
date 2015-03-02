@@ -201,11 +201,11 @@ void Graph::draw(int x, int y){
     //draw lines
     ////LEFT
     if(isLeft){
-        cout<<"draw left line"<<endl;
+        //cout<<"draw left line"<<endl;
         //loop through all lines in left axis
         xmlData.pushTag(LEFT);
         for(int i=0; i<xmlData.getNumTags("line"); i++){
-            cout<<"draw line #"<<i<<endl;
+           // cout<<"draw line #"<<i<<endl;
             xmlData.pushTag("line",i);
             leftLines[i].draw(x+rangePadding, y+rangePadding);
             xmlData.popTag();

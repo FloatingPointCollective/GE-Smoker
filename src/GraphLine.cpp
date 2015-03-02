@@ -44,7 +44,7 @@ void GraphLine::draw(int x, int y){
             }
         }
     
-    cout<<"drawing line at color "<<_color<<endl;
+   // cout<<"drawing line at color "<<_color<<endl;
         ofSetColor(_color);
         ofSetLineWidth(5);
         line.draw();
