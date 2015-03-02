@@ -42,6 +42,16 @@ int device=0x50;
 byte floatbyte[5];
 bool flashLED = false;
 
+//For the rotary Sensor
+const int encoderPinCCW = 2;// this assumes you are using the BTD 1 connector
+const int encoderPinCW = 3;
+const int XR = 5; // this pin controls the resolution of the Rotary Motion Sensor
+boolean HighResOn = false;// this controls whether you are measuring in 
+//high-res mode, to the nearest 1/4 degree. If not, it is to the nearest degree
+float res; //angle change for each transition (1 or 0.25 degrees)
+//int ReadingNumber=0;
+volatile int encoderPos = 0; // variables changed within interrupts are volatile
+
 void setup()
  {
     int muxlsb = 10; //low byte of multiplexer
@@ -75,6 +85,18 @@ void setup()
     digitalWrite(muxmsb, LOW);  
     Channel=2;  
     
+    //ROTARY SENSOR
+    pinMode(encoderPinCCW, INPUT);
+  pinMode(encoderPinCW, INPUT);
+  pinMode (XR, OUTPUT);
+  digitalWrite(XR,HighResOn);
+  digitalWrite(encoderPinCCW, HIGH);
+  digitalWrite(encoderPinCW, HIGH);
+  Serial.begin(9600);
+  attachInterrupt(0, doEncoderCCW, RISING); // encoder pin on interrupt 0 (pin 2)
+  attachInterrupt(1, doEncoderCW, FALLING); // encoder pin on interrupt 1 (pin 3)
+  if(HighResOn) res = 0.25;
+  else res =1;
 }
   
 void printStartupData(){
@@ -118,8 +140,8 @@ void loop()
 
     Serial.print("s"); //'s' denotes start    
     //**********************************************
-    //READ channels 1 & 2, and print the sensor values
-    for (int Channel=1;Channel<=3;Channel++)
+    //READ channels 1, and print the sensor values
+    for (int Channel=1;Channel<=1;Channel++)
       {
         if (Name[Channel]=="Voltage +/- 10V")
           {
@@ -141,8 +163,23 @@ void loop()
      Serial.print(SensorReading[Channel], 1);
      //print separator character
      if(Channel==1)
-       Serial.print("-");
+       Serial.print("|");
     } // end of going through the channels
+    
+   //ROTARY SENSOR
+    //float Time;
+  float Pos, oldPos;
+  int TimeBetweenReadings = 500; // in ms
+  uint8_t oldSREG = SREG;
+  cli();
+  Pos = encoderPos*res;
+  SREG = oldSREG;
+  //Time = (ReadingNumber/1000.0*TimeBetweenReadings);
+  //Serial.print(Time); // print time in seconds
+  //Serial.print("\t"); //tab character
+  Serial.print(encoderPos*res);   // display angle in degrees                               
+  //delay(TimeBetweenReadings); // Delay a bit...
+  //ReadingNumber++;
 
   //FLASH LED?
   if(flashLED){
@@ -519,6 +556,13 @@ void PrintSensorInfo()
 }
 
 
-
+void doEncoderCCW()
+{
+    encoderPos++;    // count UP
+}
+void doEncoderCW()
+{
+    encoderPos--;    // count DOWN 
+} 
 
 

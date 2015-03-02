@@ -16,7 +16,7 @@
 class DataReader{
     
 public:
-    void setup(string deviceName, int numSensors);
+    void setup(string deviceName, int numSensors, string delimiter="-");
     void update();
     void draw();
     vector<float> getSensorValues();
@@ -26,7 +26,7 @@ public:
     ofSerial	serial;
     
     float sensorValue;
-    string serialData, valueBeingRead;
+    string serialData, valueBeingRead, _delimiter;
     
     bool start, setupSuccess;
     int readValueNum;

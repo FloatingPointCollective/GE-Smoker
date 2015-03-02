@@ -8,7 +8,7 @@
 
 #include "DataReader.h"
 
-void DataReader::setup(string deviceName, int numSensors){
+void DataReader::setup(string deviceName, int numSensors, string delimiter){
     
     serial.listDevices();
     vector <ofSerialDeviceInfo> deviceList = serial.getDeviceList();
@@ -25,6 +25,7 @@ void DataReader::setup(string deviceName, int numSensors){
     serialData = "";
     start = false;
     readValueNum = 0;
+    _delimiter = delimiter;
     
     for(int i=0; i<=numSensors; i++){
         sensorValues.push_back(0);
