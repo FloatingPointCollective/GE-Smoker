@@ -38,8 +38,14 @@ void ofApp::update(){
     meatTemp1.update(ofToString(t1,1)+ui.degreeSymbolUnicode);
     meatTemp2.update(ofToString(t2,1)+ui.degreeSymbolUnicode);
     
-    meatTemp1.draw(100, 640);
-    meatTemp2.draw(100, 940);
+    meatTemp1.draw(100, ui.readingSpacing);
+    meatTemp2.draw(100, 650);
+    
+    //THE DIAL
+    int targetTemp = 200;
+    dial.update(t1/targetTemp);
+    //dial.update(0);
+    dial.draw(1284,642);
     
     ui.screenFbo.end();
     //*********************************

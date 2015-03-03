@@ -46,6 +46,7 @@ uiManager::uiManager(){
 
     
     _screenNum = 1;
+    readingSpacing = 360;
 }
 
 void uiManager::setup(int screenNum){

@@ -26,7 +26,7 @@ class uiManager{
     
     ofxFTGLFont fontGE170B, fontGE85B, fontGE54B;
     
-    int w, h, startTime, _screenNum;
+    int w, h, startTime, _screenNum, readingSpacing;
     float secondsPassed, timePassed;
     
     ofFbo screenFbo;

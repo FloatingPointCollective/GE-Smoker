@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		231578331AA54707008FE055 /* Dial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 231578311AA54707008FE055 /* Dial.cpp */; };
+		231578421AA54CCA008FE055 /* ofxSvg.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 231578371AA54CCA008FE055 /* ofxSvg.cpp */; };
+		231578431AA54CCA008FE055 /* src_colors.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2315783C1AA54CCA008FE055 /* src_colors.cpp */; };
+		231578441AA54CCA008FE055 /* svgtiny.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2315783D1AA54CCA008FE055 /* svgtiny.cpp */; };
+		231578451AA54CCA008FE055 /* svgtiny_gradient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2315783F1AA54CCA008FE055 /* svgtiny_gradient.cpp */; };
+		231578461AA54CCA008FE055 /* svgtiny_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 231578411AA54CCA008FE055 /* svgtiny_list.cpp */; };
 		234D95A41AA0312A00A758A1 /* Graph.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95A21AA0312A00A758A1 /* Graph.cpp */; };
 		234D95A71AA105A700A758A1 /* GraphLine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95A51AA105A700A758A1 /* GraphLine.cpp */; };
 		234D95B11AA105CB00A758A1 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 234D95AA1AA105CB00A758A1 /* ofxXmlSettings.cpp */; };
@@ -71,6 +77,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		231578311AA54707008FE055 /* Dial.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Dial.cpp; sourceTree = "<group>"; };
+		231578321AA54707008FE055 /* Dial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dial.h; sourceTree = "<group>"; };
+		231578371AA54CCA008FE055 /* ofxSvg.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxSvg.cpp; sourceTree = "<group>"; };
+		231578381AA54CCA008FE055 /* ofxSvg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxSvg.h; sourceTree = "<group>"; };
+		2315783C1AA54CCA008FE055 /* src_colors.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = src_colors.cpp; sourceTree = "<group>"; };
+		2315783D1AA54CCA008FE055 /* svgtiny.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = svgtiny.cpp; sourceTree = "<group>"; };
+		2315783E1AA54CCA008FE055 /* svgtiny.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = svgtiny.h; sourceTree = "<group>"; };
+		2315783F1AA54CCA008FE055 /* svgtiny_gradient.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = svgtiny_gradient.cpp; sourceTree = "<group>"; };
+		231578401AA54CCA008FE055 /* svgtiny_internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = svgtiny_internal.h; sourceTree = "<group>"; };
+		231578411AA54CCA008FE055 /* svgtiny_list.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = svgtiny_list.cpp; sourceTree = "<group>"; };
 		234D95A21AA0312A00A758A1 /* Graph.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Graph.cpp; path = ../../src/Graph.cpp; sourceTree = "<group>"; };
 		234D95A31AA0312A00A758A1 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Graph.h; path = ../../src/Graph.h; sourceTree = "<group>"; };
 		234D95A51AA105A700A758A1 /* GraphLine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GraphLine.cpp; path = ../../src/GraphLine.cpp; sourceTree = "<group>"; };
@@ -169,6 +185,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		231578351AA54CCA008FE055 /* ofxSvg */ = {
+			isa = PBXGroup;
+			children = (
+				231578361AA54CCA008FE055 /* src */,
+				231578391AA54CCA008FE055 /* libs */,
+			);
+			name = ofxSvg;
+			sourceTree = "<group>";
+		};
+		231578361AA54CCA008FE055 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				231578371AA54CCA008FE055 /* ofxSvg.cpp */,
+				231578381AA54CCA008FE055 /* ofxSvg.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxSvg/src;
+			sourceTree = "<group>";
+		};
+		231578391AA54CCA008FE055 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				2315783A1AA54CCA008FE055 /* svgTiny */,
+			);
+			name = libs;
+			path = ../../../addons/ofxSvg/libs;
+			sourceTree = "<group>";
+		};
+		2315783A1AA54CCA008FE055 /* svgTiny */ = {
+			isa = PBXGroup;
+			children = (
+				2315783B1AA54CCA008FE055 /* src */,
+			);
+			path = svgTiny;
+			sourceTree = "<group>";
+		};
+		2315783B1AA54CCA008FE055 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				2315783C1AA54CCA008FE055 /* src_colors.cpp */,
+				2315783D1AA54CCA008FE055 /* svgtiny.cpp */,
+				2315783E1AA54CCA008FE055 /* svgtiny.h */,
+				2315783F1AA54CCA008FE055 /* svgtiny_gradient.cpp */,
+				231578401AA54CCA008FE055 /* svgtiny_internal.h */,
+				231578411AA54CCA008FE055 /* svgtiny_list.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
 		234D95A81AA105CB00A758A1 /* ofxXmlSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +274,8 @@
 				2372BD131A9D44BC00D83887 /* SensorReading.h */,
 				234D95A51AA105A700A758A1 /* GraphLine.cpp */,
 				234D95A61AA105A700A758A1 /* GraphLine.h */,
+				231578311AA54707008FE055 /* Dial.cpp */,
+				231578321AA54707008FE055 /* Dial.h */,
 			);
 			name = uiComponents;
 			sourceTree = "<group>";
@@ -317,6 +384,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				231578351AA54CCA008FE055 /* ofxSvg */,
 				234D95A81AA105CB00A758A1 /* ofxXmlSettings */,
 				2372BD251A9E5EEC00D83887 /* ofxFTGL */,
 			);
@@ -497,14 +565,20 @@
 				234D95B31AA105CB00A758A1 /* tinyxmlerror.cpp in Sources */,
 				2372BD141A9D44BC00D83887 /* DataReader.cpp in Sources */,
 				2372BD551A9E5EEC00D83887 /* ofxFTGLSimpleLayout.cpp in Sources */,
+				231578421AA54CCA008FE055 /* ofxSvg.cpp in Sources */,
 				2372BD151A9D44BC00D83887 /* SensorReading.cpp in Sources */,
 				2372BD181A9D71C400D83887 /* uiManager.cpp in Sources */,
+				231578441AA54CCA008FE055 /* svgtiny.cpp in Sources */,
 				234D95A41AA0312A00A758A1 /* Graph.cpp in Sources */,
+				231578451AA54CCA008FE055 /* svgtiny_gradient.cpp in Sources */,
 				234D95B21AA105CB00A758A1 /* tinyxml.cpp in Sources */,
+				231578431AA54CCA008FE055 /* src_colors.cpp in Sources */,
 				2372BD541A9E5EEC00D83887 /* ofxFTGLFont.cpp in Sources */,
 				234D95B41AA105CB00A758A1 /* tinyxmlparser.cpp in Sources */,
 				234D95A71AA105A700A758A1 /* GraphLine.cpp in Sources */,
+				231578461AA54CCA008FE055 /* svgtiny_list.cpp in Sources */,
 				2372BD1A1A9D791600D83887 /* main.cpp in Sources */,
+				231578331AA54707008FE055 /* Dial.cpp in Sources */,
 				234D95B11AA105CB00A758A1 /* ofxXmlSettings.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 			);

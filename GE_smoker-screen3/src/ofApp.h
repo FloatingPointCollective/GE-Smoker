@@ -4,6 +4,7 @@
 #include "DataReader.h"
 #include "SensorReading.h"
 #include "uiManager.h"
+#include "Dial.h"
 
 class ofApp : public ofBaseApp{
 	
@@ -27,6 +28,8 @@ class ofApp : public ofBaseApp{
     SensorReading meatTemp1, meatTemp2;
     
     uiManager ui;
+    
+    Dial dial;
     
 };
 
