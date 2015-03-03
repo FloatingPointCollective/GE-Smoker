@@ -3,8 +3,7 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    dataReader.setup("tty.usbserial-DA017U1V", 2);
-    dataReader2.setup("tty.usbserial-DA017U1C", 1);
+    dataReader.setup("tty.usbserial-DA017N2K", 2, ":");
     
     //create the widgets
     meatTemp1.setup("MEAT TEMP 1", "f", ui.red, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
@@ -17,7 +16,6 @@ void ofApp::setup(){
 void ofApp::update(){
     
     dataReader.update();
-    dataReader2.update();
     
     ui.update();
     
@@ -26,8 +24,8 @@ void ofApp::update(){
     
     float t1, t2;
     if(dataReader.setupSuccess){
-        t1 = dataReader.sensorValues[0];
-        t2 = dataReader.sensorValues[1];
+        t1 = ui.celsiusToFahrenheit(dataReader.sensorValues[0]);
+        t2 = ui.celsiusToFahrenheit(dataReader.sensorValues[1]);
     }
     else{
         //generate some rando values...
@@ -42,7 +40,7 @@ void ofApp::update(){
     meatTemp2.draw(100, 650);
     
     //THE DIAL
-    int targetTemp = 200;
+    int targetTemp = 145;
     dial.update(t1/targetTemp);
     //dial.update(0);
     dial.draw(1284,642);

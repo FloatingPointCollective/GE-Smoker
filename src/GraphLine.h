@@ -17,10 +17,11 @@
 class GraphLine{
 public:
     GraphLine();
-    void setup(int width, int height, ofColor color, int rangeStart, int rangeEnd, ofxXmlSettings * xml);
+    void setup(int width, int height, ofColor color, int rangeStart, int rangeEnd, ofxXmlSettings * xml, float res);
     void draw(int x, int y);
     
     ofColor _color;
     int w, h, _rangeStart, _rangeEnd;
+    float _res;
     ofxXmlSettings * _xml;
 };

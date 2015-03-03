@@ -13,7 +13,7 @@ GraphLine::GraphLine(){
     
 }
 
-void GraphLine::setup(int width, int height, ofColor color, int rangeStart, int rangeEnd, ofxXmlSettings * xml){
+void GraphLine::setup(int width, int height, ofColor color, int rangeStart, int rangeEnd, ofxXmlSettings * xml, float res){
     cout<<"line setup color "<<color<<endl;
     _color = color;
     w = width;
@@ -21,11 +21,12 @@ void GraphLine::setup(int width, int height, ofColor color, int rangeStart, int 
     _rangeStart = rangeStart;
     _rangeEnd = rangeEnd;
     _xml = xml;
+    float _res = res;
+
 }
 
 void GraphLine::draw(int x, int y){
         //draw right to left...
-    
         //loop through xml data
         //xmlData.pushTag(tagName);
         ofPolyline line;
@@ -34,7 +35,7 @@ void GraphLine::draw(int x, int y){
         for(int i=0;i<numPts; i++){
             float v = _xml->getValue("pt:value", 0, numPts-i-1);
             float mappedY = ofMap(v, _rangeStart, _rangeEnd, 0, h);
-            xPos = x+w-i*10;
+            xPos = x+w-i;
             line.addVertex(xPos, y+h-mappedY);
             
             if(xPos<x){

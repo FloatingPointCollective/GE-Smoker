@@ -205,10 +205,10 @@
 			children = (
 				234D95A21AA0312A00A758A1 /* Graph.cpp */,
 				234D95A31AA0312A00A758A1 /* Graph.h */,
-				2372BD121A9D44BC00D83887 /* SensorReading.cpp */,
-				2372BD131A9D44BC00D83887 /* SensorReading.h */,
 				234D95A51AA105A700A758A1 /* GraphLine.cpp */,
 				234D95A61AA105A700A758A1 /* GraphLine.h */,
+				2372BD121A9D44BC00D83887 /* SensorReading.cpp */,
+				2372BD131A9D44BC00D83887 /* SensorReading.h */,
 			);
 			name = uiComponents;
 			sourceTree = "<group>";
@@ -387,13 +387,13 @@
 			children = (
 				2351EFEF1A9D3B8500569E24 /* layouts */,
 				2351EFED1A9D0CFE00569E24 /* uiComponents */,
+				2372BD191A9D791600D83887 /* main.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
-				2372BD191A9D791600D83887 /* main.cpp */,
+				2372BD171A9D71C400D83887 /* uiManager.h */,
+				2372BD161A9D71C400D83887 /* uiManager.cpp */,
 				2372BD101A9D44BC00D83887 /* DataReader.cpp */,
 				2372BD111A9D44BC00D83887 /* DataReader.h */,
-				2372BD161A9D71C400D83887 /* uiManager.cpp */,
-				2372BD171A9D71C400D83887 /* uiManager.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;

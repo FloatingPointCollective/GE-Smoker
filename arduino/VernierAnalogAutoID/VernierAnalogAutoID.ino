@@ -1,4 +1,6 @@
 /*
+CUSTOMISED INTERFACE FOR OPENFRAMEWORKS - Jack Kalish
+
 VernierAnalogAutoID (v 2013.12)
 Reads the information to AutoID a Vernier BTA sensor with digital AutoID,
 and resistor ID sensors including Vernier Stainless Steel Temperature Probe (TMP-BTA). 
@@ -119,7 +121,7 @@ void loop()
     Serial.print("s"); //'s' denotes start    
     //**********************************************
     //READ channels 1 & 2, and print the sensor values
-    for (int Channel=1;Channel<=3;Channel++)
+    for (int Channel=1;Channel<=2;Channel++)
       {
         if (Name[Channel]=="Voltage +/- 10V")
           {
@@ -141,15 +143,14 @@ void loop()
      Serial.print(SensorReading[Channel], 1);
      //print separator character
      if(Channel==1)
-       Serial.print("-");
+       Serial.print(":");
     } // end of going through the channels
 
   //FLASH LED?
-  if(flashLED){
   delay(TimeBetweenReadings/2);// delay half of period
   digitalWrite(led, LOW);// LED on D13 flashes once per readng
   delay(TimeBetweenReadings/2);// delay the other half
-  }
+
   ReadingNumber++;
   
   Serial.flush();  

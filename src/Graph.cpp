@@ -24,6 +24,8 @@ Graph::Graph(){
     
     isLeft = false;
     isRight = false;
+    
+    resolution = 1; //readings per pixel
 }
 
 void Graph::setLeftAxis(string label, int rangeStart, int rangeEnd, int increment){
@@ -55,16 +57,15 @@ void Graph::addLine(string axis, ofColor color){
     xmlData.pushTag(axis);
     xmlData.addTag("line");
     xmlData.popTag();
-   // xmlData.saveFile();
     
     //create new line object and push it into array
     GraphLine line;
     if(axis == LEFT){
-        line.setup(width-rangePadding*2, height-rangePadding*2, color, rangeStartLeft, rangeEndLeft, &xmlData);
+        line.setup(width-rangePadding*2, height-rangePadding*2, color, rangeStartLeft, rangeEndLeft, &xmlData, resolution);
         leftLines.push_back(line);
     }
     else if(axis == RIGHT){
-        line.setup(width-rangePadding*2, height-rangePadding*2, color, rangeStartRight, rangeEndRight, &xmlData);
+        line.setup(width-rangePadding*2, height-rangePadding*2, color, rangeStartRight, rangeEndRight, &xmlData, resolution);
         rightLines.push_back(line);
     }
     
@@ -113,7 +114,7 @@ void Graph::setup(string xmlFile){
     
     //draw X Axis
     ofSetColor(0);
-    string xLabel = "Time (hrs)";
+    string xLabel = "Time";
     ofRectangle lfb = _labelFont.getStringBoundingBox(xLabel, 0, 0);
     _labelFont.drawString(xLabel, width/2-lfb.width/2, height);
     
@@ -186,7 +187,7 @@ void Graph::pushData(float data){
     
     //pop back out to top level
     xmlData.popTag();
-    if(n>100){
+    if(n>width/resolution){
         xmlData.removeTag("pt",0);
     }
     

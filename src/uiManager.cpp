@@ -43,10 +43,11 @@ uiManager::uiManager(){
     
    // bgImage.loadImage("../../../data/bg.png");
     bgImage.loadImage("bg.png");
-
     
     _screenNum = 1;
     readingSpacing = 360;
+    
+    sampleRate = 100;
 }
 
 void uiManager::setup(int screenNum){
@@ -56,16 +57,9 @@ void uiManager::setup(int screenNum){
 void uiManager::update(){
     //draw BG
     screenFbo.begin();
-    //bgImage.draw(0,0);
     bgImage.drawSubsection(0, 0, w, h, 0, h*(_screenNum-1));
     screenFbo.end();
     
-    //read FBO to image
-    //screenFbo.readToPixels(screenImage);
-   // screenImage.update();
-    //scale the screen image based on the screen size
-    // int newHeight = (ofGetWidth()*h)/w;
-   // screenImage.resize(ofGetWidth(), newHeight);
     secondsPassed = (ofGetElapsedTimeMillis() - startTime)/1000;
     timePassed = ofGetElapsedTimeMillis() - startTime;
     
@@ -96,4 +90,8 @@ void uiManager::startTimer(){
 
 void uiManager::resetTimer(){
     startTimer();
+}
+
+float uiManager::celsiusToFahrenheit(float t){
+    return t*9/5+32;
 }

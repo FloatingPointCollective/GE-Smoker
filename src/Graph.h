@@ -36,6 +36,7 @@ public:
     string labelLeft, labelRight;
     int rangeStartLeft, rangeStartRight, rangeEndLeft, rangeEndRight, incrementLeft, incrementRight;
     int rangePadding, width, height;
+    float resolution;
     
     static string LEFT, RIGHT;
     

@@ -3,8 +3,8 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
     
-    dataReader.setup("tty.usbserial-DA017U1V", 2);
-    dataReader2.setup("tty.usbserial-DA017U1C", 1);
+    dataReader.setup("tty.usbserial-DA017U1V", 2, ":");
+    dataReader2.setup("tty.usbserial-DA017N3P", 1, ":");
     
     //create the widgets
     chamberTemp1.setup("CHAMBER TEMP 1", "f", ui.green, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
@@ -12,7 +12,7 @@ void ofApp::setup(){
     chamberTemp3.setup("CHAMBER TEMP 3", "f", ui.purple, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
 
     //setup the graph
-    graph.setBothAxis("Temperatiure (F)", 150, 350, 20);
+    graph.setBothAxis("Temperatiure (F)", 0, 300, 20);
     graph.setup("graphData.xml");
     graph.clearData();
     graph.addLine(graph.LEFT, ui.green);
@@ -37,9 +37,9 @@ void ofApp::update(){
     
     float t1, t2, t3;
     if(dataReader.setupSuccess){
-        t1 = dataReader.sensorValues[0];
-        t2 = dataReader.sensorValues[1];
-        t3 = dataReader.sensorValues[1];
+        t1 = ui.celsiusToFahrenheit(dataReader.sensorValues[0]);
+        t2 = ui.celsiusToFahrenheit(dataReader.sensorValues[1]);
+        t3 = ui.celsiusToFahrenheit(dataReader2.sensorValues[0]);
     }
     else{
         //generate some rando values...
@@ -52,13 +52,13 @@ void ofApp::update(){
     chamberTemp2.update(ofToString(t2,1)+ui.degreeSymbolUnicode);
     chamberTemp3.update(ofToString(t3,1)+ui.degreeSymbolUnicode);
 
-    if(ui.timePassed > 500){
+    if(ui.timePassed > ui.sampleRate){
         ui.resetTimer();
         graph.pushDataToLeftAxis(t1,0);
         graph.pushDataToLeftAxis(t2,1);
         graph.pushDataToLeftAxis(t3,2);
     }
-    graph.draw(780, 470);
+    graph.draw(780, 400);
     
     chamberTemp1.draw(100, 360);
     chamberTemp2.draw(100, 640);

@@ -23,10 +23,11 @@ class uiManager{
     void keyPressed(int key);
     void startTimer();
     void resetTimer();
+    float celsiusToFahrenheit(float t);
     
     ofxFTGLFont fontGE170B, fontGE85B, fontGE54B;
     
-    int w, h, startTime, _screenNum, readingSpacing;
+    int w, h, startTime, _screenNum, readingSpacing, sampleRate;
     float secondsPassed, timePassed;
     
     ofFbo screenFbo;
@@ -37,6 +38,7 @@ class uiManager{
     ofColor red, blue, green, orange, purple;
     
     string degreeSymbolUnicode;
+    
     
 private:
     int lastTime;
