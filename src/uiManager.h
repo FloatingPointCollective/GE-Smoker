@@ -17,7 +17,7 @@
 class uiManager{
     public:
     uiManager();
-    void setup();
+    void setup(int screenNum = 0);
     void update();
     void draw();
     void keyPressed(int key);
@@ -26,11 +26,11 @@ class uiManager{
     
     ofxFTGLFont fontGE170B, fontGE85B, fontGE54B;
     
-    int w, h, startTime;
+    int w, h, startTime, _screenNum;
     float secondsPassed, timePassed;
     
     ofFbo screenFbo;
-    ofImage screenImage;
+    ofImage screenImage, bgImage;
     
     bool isFullScreen;
 
