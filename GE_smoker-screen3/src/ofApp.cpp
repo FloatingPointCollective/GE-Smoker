@@ -7,9 +7,10 @@ void ofApp::setup(){
     dataReader2.setup("tty.usbserial-DA017U1C", 1);
     
     //create the widgets
-    meatTemp1.setup("MEAT TEMP 1", ofHexToString("00B0")+"f", ui.red, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
-    meatTemp2.setup("MEAT TEMP 2", "¡f", ui.orange, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
+    meatTemp1.setup("MEAT TEMP 1", "f", ui.red, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
+    meatTemp2.setup("MEAT TEMP 2", "f", ui.orange, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
 
+    ui.setup(3);
 }
 
 //--------------------------------------------------------------
@@ -18,31 +19,30 @@ void ofApp::update(){
     dataReader.update();
     dataReader2.update();
     
+    ui.update();
+    
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
-    ofBackground(255);
+    float t1, t2;
+    if(dataReader.setupSuccess){
+        t1 = dataReader.sensorValues[0];
+        t2 = dataReader.sensorValues[1];
+    }
+    else{
+        //generate some rando values...
+        t1 = ofRandom(150,450);
+        t2 = ofRandom(150,450);
+    }
     
-    meatTemp1.update("166.1");
-    meatTemp2.update("266.2");
-    
-   /* string msg;
-    msg +="OF App\n\n";
-    msg +="Device 1:\n";
-    msg += "RH: " + ofToString(dataReader.sensorValues[0]) + "\n";
-    msg += "Temp: " + ofToString(dataReader.sensorValues[1]) + "\n\n";
-    msg +="Device 2:\n";
-    msg += "Temp: " + ofToString(dataReader2.sensorValues[0]) + "\n";*/
-    
-    //fontGE85B.drawString(msg, 50, 100);
+    meatTemp1.update(ofToString(t1,1)+ui.degreeSymbolUnicode);
+    meatTemp2.update(ofToString(t2,1)+ui.degreeSymbolUnicode);
     
     meatTemp1.draw(100, 640);
     meatTemp2.draw(100, 940);
     
     ui.screenFbo.end();
     //*********************************
-    
-    ui.update();
     
 }
 

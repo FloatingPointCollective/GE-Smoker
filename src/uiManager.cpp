@@ -55,8 +55,8 @@ void uiManager::setup(int screenNum){
 void uiManager::update(){
     //draw BG
     screenFbo.begin();
-    bgImage.draw(0,0);
-   // bgImage.drawSubsection(0, 0, w, h, 0, h*(_screenNum-1));
+    //bgImage.draw(0,0);
+    bgImage.drawSubsection(0, 0, w, h, 0, h*(_screenNum-1));
     screenFbo.end();
     
     //read FBO to image

@@ -116,6 +116,9 @@ void Graph::setup(string xmlFile){
     string xLabel = "Time (hrs)";
     ofRectangle lfb = _labelFont.getStringBoundingBox(xLabel, 0, 0);
     _labelFont.drawString(xLabel, width/2-lfb.width/2, height);
+    
+    //DRAW X AXIS VALUES
+    /*
     float range = 5;
     float cnt = 0;
     //go from -5 to 0
@@ -125,7 +128,7 @@ void Graph::setup(string xmlFile){
         float center = (width-(rangePadding*2))*(cnt/range)+rangePadding;
         _valueFont.drawString(val, center-vbb.width/2, height-lfb.height-textPadding);
         cnt++;
-    }
+    }*/
     
     //RIGHT label, if there is one
     if(labelRight != UNDEFINED){
@@ -228,32 +231,6 @@ void Graph::draw(int x, int y){
     }
 }
 
-/*
-void Graph::drawLine(int x, int y, ofColor c, string tagName, int rangeMin, int rangeMax){
-    //draw right to left...
-    ofSetColor(c);
-    //loop through xml data
-    //xmlData.pushTag(tagName);
-    ofPolyline line;
-    int numPts = xmlData.getNumTags("pt");
-    int xPos;
-    for(int i=0;i<numPts; i++){
-        float v = xmlData.getValue("pt:value", 0, numPts-i-1);
-        float mappedY = ofMap(v, rangeMin, rangeMax, 0, height-rangePadding*2);
-        xPos = x+width-rangePadding-i*10;
-        line.addVertex(xPos, y+height-mappedY-rangePadding);
-        
-        if(xPos<x+rangePadding){
-            //remove the first tag
-            xmlData.removeTag("pt",0);
-            xmlData.saveFile();
-        }
-    }
-    
-    ofSetLineWidth(5);
-    line.draw();
-   // xmlData.popTag();
-}*/
 
 void Graph::clearData(){
     cout<<"clear data"<<endl;

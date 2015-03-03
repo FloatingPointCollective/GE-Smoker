@@ -18,7 +18,8 @@ void ofApp::setup(){
     graph.addLine(graph.LEFT, ui.green);
     graph.addLine(graph.LEFT, ui.orange);
     graph.addLine(graph.LEFT, ui.purple);
-
+    ui.setup(2);
+    ui.startTimer();
 }
 
 //--------------------------------------------------------------
@@ -27,19 +28,12 @@ void ofApp::update(){
     dataReader.update();
     dataReader2.update();
     
+    ui.update();
+
+    
     //draw everything to the screen FBO
     ui.screenFbo.begin();
-    
-    ofBackground(255);
-   /* string msg;
-    msg +="OF App\n\n";
-    msg +="Device 1:\n";
-    msg += "RH: " + ofToString(dataReader.sensorValues[0]) + "\n";
-    msg += "Temp: " + ofToString(dataReader.sensorValues[1]) + "\n\n";
-    msg +="Device 2:\n";
-    msg += "Temp: " + ofToString(dataReader2.sensorValues[0]) + "\n";
-    */
-    //fontGE85B.drawString(msg, 50, 100);
+    //ofBackground(255);
     
     float t1, t2, t3;
     if(dataReader.setupSuccess){
@@ -58,9 +52,12 @@ void ofApp::update(){
     chamberTemp2.update(ofToString(t2,1)+ui.degreeSymbolUnicode);
     chamberTemp3.update(ofToString(t3,1)+ui.degreeSymbolUnicode);
 
-    graph.pushDataToLeftAxis(t1,0);
-    graph.pushDataToLeftAxis(t2,1);
-    graph.pushDataToLeftAxis(t3,2);
+    if(ui.timePassed > 500){
+        ui.resetTimer();
+        graph.pushDataToLeftAxis(t1,0);
+        graph.pushDataToLeftAxis(t2,1);
+        graph.pushDataToLeftAxis(t3,2);
+    }
     graph.draw(780, 470);
     
     chamberTemp1.draw(100, 360);
@@ -70,7 +67,7 @@ void ofApp::update(){
     ui.screenFbo.end();
     //*********************************
     
-    ui.update();
+    
     
 }
 
