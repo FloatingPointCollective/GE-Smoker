@@ -12,6 +12,8 @@
 	<dict>
 		<key>2A0CFE1019F698B00C9572577BCC47738F98F3F2</key>
 		<string>https://github.com/Flightphase/ofxFTGL.git</string>
+		<key>BB48781AAC70C89AED1A649A93F25300AFE948DD</key>
+		<string>https://github.com/toolbits/ofxWatchdog.git</string>
 		<key>C0CD73B3805CEED0FD0116A896ED0A1DF5FBDED9</key>
 		<string>https://github.com/FloatingPointCollective/GE-Smoker.git</string>
 	</dict>
@@ -21,6 +23,8 @@
 	<dict>
 		<key>2A0CFE1019F698B00C9572577BCC47738F98F3F2</key>
 		<string>../../../../addons/ofxFTGL</string>
+		<key>BB48781AAC70C89AED1A649A93F25300AFE948DD</key>
+		<string>../../../../../addons/ofxWatchdog</string>
 		<key>C0CD73B3805CEED0FD0116A896ED0A1DF5FBDED9</key>
 		<string>../../..</string>
 	</dict>
@@ -47,6 +51,14 @@
 			<string>2A0CFE1019F698B00C9572577BCC47738F98F3F2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>ofxFTGL</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>BB48781AAC70C89AED1A649A93F25300AFE948DD</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ofxWatchdog</string>
 		</dict>
 	</array>
 </dict>

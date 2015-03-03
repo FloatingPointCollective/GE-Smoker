@@ -20,6 +20,7 @@
 		2372BD541A9E5EEC00D83887 /* ofxFTGLFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD281A9E5EEC00D83887 /* ofxFTGLFont.cpp */; };
 		2372BD551A9E5EEC00D83887 /* ofxFTGLSimpleLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD2A1A9E5EEC00D83887 /* ofxFTGLSimpleLayout.cpp */; };
 		2372BD561A9E5EEC00D83887 /* libftgl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2372BD4D1A9E5EEC00D83887 /* libftgl.a */; };
+		A968D2661AA668FB006FA930 /* ofxWatchdog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A968D2641AA668FB006FA930 /* ofxWatchdog.cpp */; };
 		BBAB23CB13894F3D00AA2426 /* GLUT.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = BBAB23BE13894E4700AA2426 /* GLUT.framework */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E45BE97B0E8CC7DD009D7055 /* AGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E45BE9710E8CC7DD009D7055 /* AGL.framework */; };
@@ -117,6 +118,8 @@
 		2372BD451A9E5EEC00D83887 /* FTTextureGlyph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTTextureGlyph.h; sourceTree = "<group>"; };
 		2372BD4C1A9E5EEC00D83887 /* buildFTGL.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = buildFTGL.sh; sourceTree = "<group>"; };
 		2372BD4D1A9E5EEC00D83887 /* libftgl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libftgl.a; sourceTree = "<group>"; };
+		A968D2641AA668FB006FA930 /* ofxWatchdog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxWatchdog.cpp; sourceTree = "<group>"; };
+		A968D2651AA668FB006FA930 /* ofxWatchdog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxWatchdog.h; sourceTree = "<group>"; };
 		BBAB23BE13894E4700AA2426 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = ../../../libs/glut/lib/osx/GLUT.framework; sourceTree = "<group>"; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E45BE9710E8CC7DD009D7055 /* AGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AGL.framework; path = /System/Library/Frameworks/AGL.framework; sourceTree = "<absolute>"; };
@@ -314,9 +317,28 @@
 			path = osx;
 			sourceTree = "<group>";
 		};
+		A968D2621AA668FB006FA930 /* ofxWatchdog */ = {
+			isa = PBXGroup;
+			children = (
+				A968D2631AA668FB006FA930 /* src */,
+			);
+			name = ofxWatchdog;
+			sourceTree = "<group>";
+		};
+		A968D2631AA668FB006FA930 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A968D2641AA668FB006FA930 /* ofxWatchdog.cpp */,
+				A968D2651AA668FB006FA930 /* ofxWatchdog.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxWatchdog/src;
+			sourceTree = "<group>";
+		};
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				A968D2621AA668FB006FA930 /* ofxWatchdog */,
 				234D95A81AA105CB00A758A1 /* ofxXmlSettings */,
 				2372BD251A9E5EEC00D83887 /* ofxFTGL */,
 			);
@@ -502,6 +524,7 @@
 				234D95A41AA0312A00A758A1 /* Graph.cpp in Sources */,
 				234D95B21AA105CB00A758A1 /* tinyxml.cpp in Sources */,
 				2372BD541A9E5EEC00D83887 /* ofxFTGLFont.cpp in Sources */,
+				A968D2661AA668FB006FA930 /* ofxWatchdog.cpp in Sources */,
 				234D95B41AA105CB00A758A1 /* tinyxmlparser.cpp in Sources */,
 				234D95A71AA105A700A758A1 /* GraphLine.cpp in Sources */,
 				2372BD1A1A9D791600D83887 /* main.cpp in Sources */,

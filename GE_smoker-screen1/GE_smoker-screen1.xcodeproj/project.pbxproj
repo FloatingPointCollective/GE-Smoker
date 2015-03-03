@@ -15,6 +15,7 @@
 		2372BD541A9E5EEC00D83887 /* ofxFTGLFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD281A9E5EEC00D83887 /* ofxFTGLFont.cpp */; };
 		2372BD551A9E5EEC00D83887 /* ofxFTGLSimpleLayout.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2372BD2A1A9E5EEC00D83887 /* ofxFTGLSimpleLayout.cpp */; };
 		2372BD561A9E5EEC00D83887 /* libftgl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2372BD4D1A9E5EEC00D83887 /* libftgl.a */; };
+		A968D2601AA668D6006FA930 /* ofxWatchdog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A968D25E1AA668D6006FA930 /* ofxWatchdog.cpp */; };
 		AE78C54E1AA0039600A9A4E2 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE78C5471AA0039600A9A4E2 /* ofxXmlSettings.cpp */; };
 		AE78C54F1AA0039600A9A4E2 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE78C54A1AA0039600A9A4E2 /* tinyxml.cpp */; };
 		AE78C5501AA0039600A9A4E2 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AE78C54C1AA0039600A9A4E2 /* tinyxmlerror.cpp */; };
@@ -109,6 +110,8 @@
 		2372BD451A9E5EEC00D83887 /* FTTextureGlyph.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FTTextureGlyph.h; sourceTree = "<group>"; };
 		2372BD4C1A9E5EEC00D83887 /* buildFTGL.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = buildFTGL.sh; sourceTree = "<group>"; };
 		2372BD4D1A9E5EEC00D83887 /* libftgl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libftgl.a; sourceTree = "<group>"; };
+		A968D25E1AA668D6006FA930 /* ofxWatchdog.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxWatchdog.cpp; sourceTree = "<group>"; };
+		A968D25F1AA668D6006FA930 /* ofxWatchdog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxWatchdog.h; sourceTree = "<group>"; };
 		AE78C5471AA0039600A9A4E2 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ofxXmlSettings.cpp; sourceTree = "<group>"; };
 		AE78C5481AA0039600A9A4E2 /* ofxXmlSettings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ofxXmlSettings.h; sourceTree = "<group>"; };
 		AE78C54A1AA0039600A9A4E2 /* tinyxml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = tinyxml.cpp; sourceTree = "<group>"; };
@@ -283,6 +286,24 @@
 			path = osx;
 			sourceTree = "<group>";
 		};
+		A968D25C1AA668D6006FA930 /* ofxWatchdog */ = {
+			isa = PBXGroup;
+			children = (
+				A968D25D1AA668D6006FA930 /* src */,
+			);
+			name = ofxWatchdog;
+			sourceTree = "<group>";
+		};
+		A968D25D1AA668D6006FA930 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				A968D25E1AA668D6006FA930 /* ofxWatchdog.cpp */,
+				A968D25F1AA668D6006FA930 /* ofxWatchdog.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxWatchdog/src;
+			sourceTree = "<group>";
+		};
 		AE78C5451AA0039600A9A4E2 /* ofxXmlSettings */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,6 +338,7 @@
 		BB4B014C10F69532006C3DED /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				A968D25C1AA668D6006FA930 /* ofxWatchdog */,
 				AE78C5451AA0039600A9A4E2 /* ofxXmlSettings */,
 				2372BD251A9E5EEC00D83887 /* ofxFTGL */,
 			);
@@ -502,6 +524,7 @@
 				AE78C54E1AA0039600A9A4E2 /* ofxXmlSettings.cpp in Sources */,
 				2372BD151A9D44BC00D83887 /* SensorReading.cpp in Sources */,
 				2372BD181A9D71C400D83887 /* uiManager.cpp in Sources */,
+				A968D2601AA668D6006FA930 /* ofxWatchdog.cpp in Sources */,
 				234D95B71AA107FC00A758A1 /* GraphLine.cpp in Sources */,
 				2372BD541A9E5EEC00D83887 /* ofxFTGLFont.cpp in Sources */,
 				2372BD1A1A9D791600D83887 /* main.cpp in Sources */,
