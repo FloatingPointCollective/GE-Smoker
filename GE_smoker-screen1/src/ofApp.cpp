@@ -26,7 +26,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    //ui.update();
+    ui.update();
     
     
     
@@ -36,7 +36,7 @@ void ofApp::update(){
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
-    ofBackground(255);
+    //ofBackground(255);
     
     float sv, h;
     int rot;
@@ -59,11 +59,13 @@ void ofApp::update(){
         //sv = (lastRot - rot)/100;
         //sv = rot/100;
         
+        if(dataReader.setupSuccess){
         //d is the diameter of the blade in feet
         float d = 3.5/12;
         // C is circumference, over 60 to calculate movement per minute
         float C = (M_PI * d);
         sv = (C*rot/360)*60;
+        }
         
         //lastRot = rot;
         
@@ -91,7 +93,7 @@ void ofApp::update(){
     ui.screenFbo.end();
     //*********************************
     
-    ui.update();
+    
     
 }
 
