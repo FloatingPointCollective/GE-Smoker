@@ -29,7 +29,7 @@ void ofApp::update(){
     }
     else{
         //generate some rando values...
-        t1 = ofRandom(150,450);
+        t1 = ofRandom(0,220);
         t2 = ofRandom(150,450);
     }
     
@@ -54,6 +54,8 @@ void ofApp::update(){
 void ofApp::draw(){
     //update screen image from FBO
     ui.draw();
+    
+   // dial.draw(1300,642);
 }
 
 //--------------------------------------------------------------
