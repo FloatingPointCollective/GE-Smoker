@@ -12,7 +12,7 @@ void ofApp::setup(){
     chamberTemp3.setup("CHAMBER TEMP 3", "f", ui.purple, &ui.fontGE170B, &ui.fontGE85B, &ui.fontGE54B);
 
     //setup the graph
-    graph.setBothAxis("Temperatiure (F)", 0, 300, 20);
+    graph.setBothAxis("Temperature (F)", 80, 300, 20);
     graph.setup("graphData.xml");
     graph.clearData();
     graph.addLine(graph.LEFT, ui.green);
