@@ -53,7 +53,7 @@ void ofApp::update(){
     
     
     //update graph every second
-    if(ui.timePassed > 500){
+    if(ui.timePassed > ui.sampleRate){
         if(dataReader.setupSuccess){
             //d is the diameter of the blade in feet
             float d = 3.5/12;
