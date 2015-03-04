@@ -36,8 +36,6 @@ void ofApp::update(){
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
-    //ofBackground(255);
-    
     float sv, h;
     int rot;
     if(dataReader.setupSuccess){
@@ -56,26 +54,21 @@ void ofApp::update(){
     
     //update graph every second
     if(ui.timePassed > 500){
-        //sv = (lastRot - rot)/100;
-        //sv = rot/100;
-        
         if(dataReader.setupSuccess){
-        //d is the diameter of the blade in feet
-        float d = 3.5/12;
-        // C is circumference, over 60 to calculate movement per minute
-        float C = (M_PI * d);
-        sv = (C*rot/360)*60;
+            //d is the diameter of the blade in feet
+            float d = 3.5/12;
+            // C is circumference, over 60 to calculate movement per minute
+            float C = (M_PI * d);
+            sv = (C*rot/360)*60;
         }
         
-        //lastRot = rot;
-        
-        
-        cout<<"read value 1: "<<rot<<endl;
+       // cout<<"read value 1: "<<rot<<endl;
         //add data to graph
         graph.pushDataToLeftAxis(sv);
         graph.pushDataToRightAxis(h);
         
-        smokeVelocity.update(ofToString(sv,1));
+        //update smoke velocity value
+        smokeVelocity.update(ofToString(abs(sv),0));
         
         ui.resetTimer();
         
