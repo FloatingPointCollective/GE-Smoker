@@ -25,7 +25,7 @@ Graph::Graph(){
     isLeft = false;
     isRight = false;
     
-    resolution = 1; //readings per pixel
+    resolution = 5; //readings per pixel
 }
 
 void Graph::setLeftAxis(string label, int rangeStart, int rangeEnd, int increment){

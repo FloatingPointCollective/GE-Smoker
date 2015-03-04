@@ -30,6 +30,9 @@ void DataReader::setup(string deviceName, int numSensors, string delimiter){
     for(int i=0; i<=numSensors; i++){
         sensorValues.push_back(0);
     }
+    
+    //flush on start?
+    serial.flush();
 }
 
 void DataReader::update(){

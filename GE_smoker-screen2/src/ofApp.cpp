@@ -33,7 +33,6 @@ void ofApp::update(){
     
     //draw everything to the screen FBO
     ui.screenFbo.begin();
-    //ofBackground(255);
     
     float t1, t2, t3;
     if(dataReader.setupSuccess){

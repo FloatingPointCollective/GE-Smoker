@@ -18,7 +18,7 @@ See www.vernier.com/arduino for more information.
  */
 #include <math.h>
 int ThermistorPIN = 2;// Analog Pin 0
-int TimeBetweenReadings = 500; // in ms
+int TimeBetweenReadings = 1000; // in ms
 int ReadingNumber=0;
 
 void setup() 

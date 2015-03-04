@@ -21,7 +21,7 @@ void GraphLine::setup(int width, int height, ofColor color, int rangeStart, int 
     _rangeStart = rangeStart;
     _rangeEnd = rangeEnd;
     _xml = xml;
-    float _res = res;
+    _res = res;
 
 }
 
@@ -35,7 +35,7 @@ void GraphLine::draw(int x, int y){
         for(int i=0;i<numPts; i++){
             float v = _xml->getValue("pt:value", 0, numPts-i-1);
             float mappedY = ofMap(v, _rangeStart, _rangeEnd, 0, h);
-            xPos = x+w-i;
+            xPos = x+w-i*_res;
             line.addVertex(xPos, y+h-mappedY);
             
             if(xPos<x){
