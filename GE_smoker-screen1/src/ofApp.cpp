@@ -21,6 +21,8 @@ void ofApp::setup(){
     ui.startTimer();
     
     lastRot = 0;
+    sv = 0;
+    targetSV = 0;
     
 }
 
@@ -28,15 +30,12 @@ void ofApp::setup(){
 void ofApp::update(){
     ui.update();
     
-    
-    
     dataReader.update();
-    //dataReader2.update();
     
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
-    float sv, h;
+    float h;
     int rot;
     if(dataReader.setupSuccess){
         if(ui.timePassed > 500){
@@ -47,10 +46,11 @@ void ofApp::update(){
     }
     else{
         //generate some rando values...
-        sv = graph.getTestData(graph.LEFT);
+        //sv = graph.getTestData(graph.LEFT);
         h = graph.getTestData(graph.RIGHT);
     }
     
+    //get smoke velocity reading
     
     //update graph every second
     if(ui.timePassed > 500){
@@ -59,7 +59,11 @@ void ofApp::update(){
             float d = 3.5/12;
             // C is circumference, over 60 to calculate movement per minute
             float C = (M_PI * d);
-            sv = (C*rot/360)*60;
+            targetSV = (C*rot/360)*60;
+        }
+        else{
+            targetSV = getDefaultSmokeVelocity();
+            
         }
         
        // cout<<"read value 1: "<<rot<<endl;
@@ -67,14 +71,19 @@ void ofApp::update(){
         graph.pushDataToLeftAxis(sv);
         graph.pushDataToRightAxis(h);
         
-        //update smoke velocity value
-        smokeVelocity.update(ofToString(abs(sv),0));
-        
         ui.resetTimer();
-        
-        
     }
     
+    //if 0, randomize
+    if(targetSV == 0)
+        targetSV = getDefaultSmokeVelocity();
+    
+    //tween to target sv
+    cout<<"targetSV: "<<targetSV<<endl;
+    sv += (targetSV - sv)/20;
+    
+    //update smoke velocity value
+    smokeVelocity.update(ofToString(abs(sv),0));
     
     smokeVelocity.draw(100, 640);
     
@@ -86,8 +95,10 @@ void ofApp::update(){
     ui.screenFbo.end();
     //*********************************
     
-    
-    
+}
+
+float ofApp::getDefaultSmokeVelocity(){
+    return ofRandom(7,20);
 }
 
 //--------------------------------------------------------------

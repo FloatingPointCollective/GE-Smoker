@@ -12,6 +12,7 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
+    float getDefaultSmokeVelocity();
 
 		void keyPressed  (int key);
 		void keyReleased(int key);
@@ -24,7 +25,7 @@ class ofApp : public ofBaseApp{
 		void gotMessage(ofMessage msg);
 		
 
-    float sensorValue;
+    float sensorValue, sv, targetSV;
     int lastRot;
     int readSensor;
     string serialData;
