@@ -35,10 +35,12 @@ void ofApp::update(){
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
+    int readTime = 3000;
+    
     float h;
     int rot;
     if(dataReader.setupSuccess){
-        if(ui.timePassed > 500){
+        if(ui.timePassed > readTime){
             rot = dataReader.sensorValues[1];
         }
         h = dataReader.sensorValues[0];
@@ -53,7 +55,7 @@ void ofApp::update(){
     //get smoke velocity reading
     
     //update graph every second
-    if(ui.timePassed > 500){
+    if(ui.timePassed > readTime){
         if(dataReader.setupSuccess){
             //d is the diameter of the blade in feet
             float d = 3.5/12;
