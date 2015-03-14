@@ -35,7 +35,7 @@ void ofApp::update(){
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
-    int readTime = 3000;
+    int readTime = 4000;
     
     float h;
     int rot;
@@ -61,7 +61,7 @@ void ofApp::update(){
             float d = 3.5/12;
             // C is circumference, over 60 to calculate movement per minute
             float C = (M_PI * d);
-            targetSV = (C*rot/360)*60;
+            targetSV = (C*rot/360)*(60/(readTime/1000));
         }
         else{
             targetSV = getDefaultSmokeVelocity();
