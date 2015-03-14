@@ -40,7 +40,7 @@ void ofApp::update(){
     meatTemp2.draw(100, 650);
     
     //THE DIAL
-    int targetTemp = 145;
+    int targetTemp = 200;
     dial.update(t1/targetTemp);
     //dial.update(0);
     dial.draw(1284,642);
