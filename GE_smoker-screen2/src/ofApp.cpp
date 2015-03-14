@@ -30,7 +30,7 @@ void ofApp::update(){
     
     ui.update();
 
-    
+    int readTime = 4000;
     //draw everything to the screen FBO
     ui.screenFbo.begin();
     
@@ -51,7 +51,7 @@ void ofApp::update(){
     chamberTemp2.update(ofToString(t2,1)+ui.degreeSymbolUnicode);
     chamberTemp3.update(ofToString(t3,1)+ui.degreeSymbolUnicode);
 
-    if(ui.timePassed > 1000){
+    if(ui.timePassed > readTime){
         ui.resetTimer();
         graph.pushDataToLeftAxis(t1,0);
         graph.pushDataToLeftAxis(t2,1);
