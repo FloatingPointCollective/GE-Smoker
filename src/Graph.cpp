@@ -105,9 +105,9 @@ void Graph::setup(string xmlFile){
             _valueFont.drawString(val, labelFontBounds.height+textPadding, center+valueFontBounds.height/2);
             
             //draw hor line at center of each value
-            ofSetColor(50);
+            ofSetColor(100);
             int left = labelFontBounds.height+valueFontBounds.width+textPadding*2;
-            ofRect(left, round(center), width-left*2, 1);
+            ofRect(left, round(center), width-left*2, 2);
             cnt++;
         }
     }
