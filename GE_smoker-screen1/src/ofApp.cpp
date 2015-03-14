@@ -12,7 +12,7 @@ void ofApp::setup(){
     
     //setup the graph
     graph.setLeftAxis("Smoke Velocity (f/m)", -100, 100, 20);
-    graph.setRightAxis("Relative Humidity (%)", 0, 100, 10);
+    graph.setRightAxis("Relative Humidity (%)", 0, 50, 5);
     graph.setup("graphData.xml");
     graph.clearData();
     graph.addLine(graph.LEFT, ui.red);
