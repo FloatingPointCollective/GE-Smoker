@@ -43,7 +43,6 @@ void ofApp::update(){
         if(ui.timePassed > readTime){
             rot = dataReader.sensorValues[1];
         }
-        h = dataReader.sensorValues[0];
         
     }
     else{
@@ -62,11 +61,17 @@ void ofApp::update(){
             // C is circumference, over 60 to calculate movement per minute
             float C = (M_PI * d);
             targetSV = (C*rot/360)*(60/(readTime/1000));
+            h = dataReader.sensorValues[0];
         }
         else{
             targetSV = getDefaultSmokeVelocity();
             
         }
+        
+        
+
+        if(h <= 0)
+            h = ofRandom(4,5);
         
        // cout<<"read value 1: "<<rot<<endl;
         //add data to graph
@@ -79,6 +84,8 @@ void ofApp::update(){
     //if 0, randomize
     if(targetSV == 0)
         targetSV = getDefaultSmokeVelocity();
+    
+    
     
     //tween to target sv
     cout<<"targetSV: "<<targetSV<<endl;
