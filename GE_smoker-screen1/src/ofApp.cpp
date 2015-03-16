@@ -70,8 +70,8 @@ void ofApp::update(){
         
         
 
-        if(h <= 0)
-            h = ofRandom(4,5);
+        //if(h <= 0)
+        h = ofRandom(4,5);
         
        // cout<<"read value 1: "<<rot<<endl;
         //add data to graph
