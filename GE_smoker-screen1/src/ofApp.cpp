@@ -48,7 +48,7 @@ void ofApp::update(){
     else{
         //generate some rando values...
         //sv = graph.getTestData(graph.LEFT);
-        h = graph.getTestData(graph.RIGHT);
+        //h = graph.getTestData(graph.RIGHT);
     }
     
     //get smoke velocity reading
@@ -62,16 +62,19 @@ void ofApp::update(){
             float C = (M_PI * d);
             targetSV = (C*rot/360)*(60/(readTime/1000));
             h = dataReader.sensorValues[0];
+            
         }
         else{
             targetSV = getDefaultSmokeVelocity();
             
         }
         
+        h=ofRandom(4,5);
         
+        humidity.update(ofToString(h,2));
 
         //if(h <= 0)
-        h = ofRandom(4,5);
+       // h = ofRandom(4,5);
         
        // cout<<"read value 1: "<<rot<<endl;
         //add data to graph
@@ -96,7 +99,7 @@ void ofApp::update(){
     
     smokeVelocity.draw(100, 640);
     
-    humidity.update(ofToString(h,2));
+    
     humidity.draw(100, 940);
 
     
